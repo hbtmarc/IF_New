@@ -1,0 +1,1320 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  LoadingScreen:
+    Properties:
+      BackgroundImage: ='LoadingScreenBG (1)'
+      ImagePosition: =ImagePosition.Fill
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+      OnVisible: |-
+        =If(
+            CountRows(
+                Filter(
+                    OpçãoUsuário,
+                    Título = User().Email
+                )
+            ) = 0,
+            UpdateContext({vcNewUser: true}),
+            UpdateContext({vcNewUser: false})
+        )
+    Children:
+      - Lbl_Saudação_11:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Right
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(77, 77, 77, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Bold
+            Height: =177
+            Size: =70
+            Text: |+
+              ="Insp"
+            Width: =272
+            X: =484
+            Y: =271-posY
+      - Gallery1:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =292
+            Items: |-
+              =Sort( /*relaciona todas as paradas por ordem de inicio, do mais proximo para o mais distante. Após 180 dias do termino da parada o evento é esquecido*/
+                  Filter(
+                      DadosParada, 'Data Fim'> (Today()- 180)
+                  ),
+                  'Data de inicio',SortOrder.Ascending
+              )
+            Visible: |-
+              =If(
+                  posY=0,false,
+                  If(
+                      VcContador<>0,false,true
+                  )
+              )
+            Width: =400
+            X: =539
+            Y: =415
+          Children:
+            - Title26:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(77, 77, 77, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =46
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =15
+                  Text: =ThisItem.Nome
+                  Width: =300
+                  X: =16
+            - Subtitle23:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(77, 77, 77, 1)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =36
+                  Italic: =true
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: ="De "& ThisItem.'Data de inicio'& " a " & ThisItem.'Data Fim'&"."
+                  Width: =300
+                  X: =Title26.X
+                  Y: =Title26.Y + Title26.Height
+            - NextArrow21:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  AccessibleLabel: =Self.Tooltip
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(0, 134, 208, 1)
+                  Height: =90
+                  Icon: =Icon.ChevronRight
+                  OnSelect: |-
+                    =Set(
+                        VgEvento,
+                        ThisItem
+                    );
+                    Set(
+                        VgFunção,
+                        ThisItem.Título
+                    );
+                    Set(
+                        VgReset,
+                        false
+                    );
+                    If(
+                        IsBlank(
+                            LookUp(
+                                OpçãoUsuário,
+                                Título = User().Email
+                            )
+                        ),
+                        Patch(
+                            OpçãoUsuário,
+                            Defaults(OpçãoUsuário),
+                            {
+                                Título: User().Email,
+                                ÚltimaVisita: VgFunção,
+                                Tema: "Aqua",
+                                MenuExtendido: "true"
+                            }
+                        ),
+                        Patch(
+                            OpçãoUsuário,
+                            LookUp(
+                                OpçãoUsuário,
+                                Título = User().Email
+                            ),
+                            {ÚltimaVisita: VgFunção}
+                        )
+                    );
+                    Navigate(
+                        'FluxoAtividades 2.0',
+                        ScreenTransition.Fade
+                    )
+                  PaddingBottom: =16
+                  PaddingLeft: =16
+                  PaddingRight: =16
+                  PaddingTop: =16
+                  Tooltip: ="Exibir detalhes do item"
+                  Width: =84
+                  X: =316
+            - Separator26:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Visible: =false
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle31:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =RGBA(0, 134, 208, 1)
+                  Height: =Parent.TemplateHeight - Separator26.Height
+                  OnSelect: =Select(Parent)
+                  Visible: =ThisItem.IsSelected
+                  Width: =4
+      - Lbl_Saudação_10:
+          Control: Label@2.5.1
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(77, 77, 77, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Lighter
+            Height: =177
+            Size: =70
+            Text: |+
+              ="FLOW"
+            Width: =274
+            X: =743
+            Y: =271-posY
+      - Lbl_Saudação_12:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(77, 77, 77, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Lighter
+            Height: =36
+            Italic: =true
+            Size: =20
+            Text: |-
+              =If(
+                  posY=0,"REGAP/IE","ESCOLHA UMA FUNÇÃO"
+              )
+            Width: =283
+            X: =569
+            Y: =480-posY
+      - Timer1:
+          Control: Timer@2.1.0
+          Properties:
+            AutoStart: =true
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =ColorFade(Self.BorderColor, 70%)
+            DisabledColor: =ColorFade(Self.Fill, 90%)
+            DisabledFill: =ColorFade(Self.Fill, 70%)
+            Duration: =5000
+            Fill: =RGBA(56, 96, 178, 1)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+            OnTimerEnd: |-
+              =If(//VERIFICA SE É O USUÁRIO É NOVO OU RECORRENTE
+                  vcNewUser = true,//SE FOR NOVO USUÁRIO, EXIBE ELEMENTOS NA TELA...
+                  UpdateContext(
+                      {
+                          ElementosTelaInicial: true,
+                          posY: posY + 200
+                      }
+                  );
+                  Patch(//CRIA NOVO REGISTRO DE USUÁRIO...
+                      OpçãoUsuário,
+                      Defaults(OpçãoUsuário),
+                      {Título: User().Email}
+                  );
+                  Set(//CARREGA TEMA PADRÃO
+                      vg_AppTheme,
+                      vg_TemaOldPC
+                  ),
+                  If(//NO CASO DE USUÁRIO RECORRENTE, VERIFICA SE O APP FOI RESETADO.
+                      VgReset = true,
+                      UpdateContext(//SE TIVER SIDO, EXIBE ELEMENTOS NA TELA...
+                          {
+                              ElementosTelaInicial: true,
+                              posY: posY + 200
+                          }
+                      );
+                      Switch(//CARREGA TEMA PREFERIDO
+                          LookUp(
+                              OpçãoUsuário,
+                              Título = User().Email,
+                              Tema
+                          ),
+                          "Aqua",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaAqua
+                          ),
+                          "Azul",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaAzul
+                          ),
+                          "Old PC",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaOldPC
+                          ),
+                          "Verde",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaVerde
+                          ),
+                          "Amarelo",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaAmarelo
+                          ),
+                          "Terracota",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaTerracota
+                          ),
+                          "Escuro",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaEscuro
+                          ),
+                          "Cítrico",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaCitrico
+                          )
+                      ),
+                      Switch(//CARREGA TEMA PREFERIDO...
+                          LookUp(
+                              OpçãoUsuário,
+                              Título = User().Email,
+                              Tema
+                          ),
+                          "Aqua",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaAqua
+                          ),
+                          "Azul",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaAzul
+                          ),
+                          "Old PC",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaOldPC
+                          ),
+                          "Verde",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaVerde
+                          ),
+                          "Amarelo",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaAmarelo
+                          ),
+                          "Terracota",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaTerracota
+                          ),
+                          "Escuro",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaEscuro
+                          ),
+                          "Cítrico",
+                          Set(
+                              vg_AppTheme,
+                              vg_TemaCitrico
+                          )
+                      );
+                      Switch(//SE O APP NÃO TIVER SIDO RESETADO, VERIFICA ÚLTIMO ACESSO
+                          LookUp(
+                              OpçãoUsuário,
+                              Título = User().Email,
+                              ÚltimaVisita
+                          ),
+                          "laboratório",//SE ACESSO ANTERIOR FOR NO MODULO 'LABORATÓRIO'...
+                          Patch(//REGISTRA MOMENTO DO ACESSO ATUAL...
+                              OpçãoUsuário,
+                              LookUp(
+                                  OpçãoUsuário,
+                                  Título = User().Email
+                              ),
+                              {UltimoAcesso: Now()}
+                          );
+                          Navigate(//VAI PARA TELA INICIAL.
+                              'TelaInicial 2.0',
+                              ScreenTransition.Fade
+                          ),
+                          "planos",//SE ACESSO ANTERIOR FOR NO MODULO 'PLANOS'...
+                          Patch(//REGISTRA MOMENTO DO ACESSO ATUAL...
+                              OpçãoUsuário,
+                              LookUp(
+                                  OpçãoUsuário,
+                                  Título = User().Email
+                              ),
+                              {UltimoAcesso: Now()}
+                          );
+                          Navigate(//VAI PARA TELA INICIAL.
+                              'TelaInicial 2.0',
+                              ScreenTransition.Fade
+                          ),
+                          "rotina",//SE ACESSO ANTERIOR FOR NO MODULO 'ROTINA'...
+                          Patch(//REGISTRA MOMENTO DO ACESSO ATUAL...
+                              OpçãoUsuário,
+                              LookUp(
+                                  OpçãoUsuário,
+                                  Título = User().Email
+                              ),
+                              {UltimoAcesso: Now()}
+                          );
+                          Navigate(//VAI PARA TELA INICIAL.
+                              'TelaInicial 2.0',
+                              ScreenTransition.Fade
+                          ),
+                          Navigate(//VAI PARA TELA INICIAL.
+                              'FluxoAtividades 2.0',
+                              ScreenTransition.Fade
+                          )
+                      )
+                  );
+                  Patch(//REGISTRA MOMENTO DO ACESSO ATUAL...
+                      OpçãoUsuário,
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email
+                      ),
+                      {UltimoAcesso: Now()}
+                  );
+                  Set(//CARREGA VARIAVEL QUE DEFINE O EVENTO
+                      VgEvento,
+                      LookUp(
+                          DadosParada,
+                          Título = LookUp(
+                              OpçãoUsuário,
+                              Título = User().Email,
+                              ÚltimaVisita
+                          )
+                      )
+                  )
+              )
+            OnTimerStart: |-
+              =UpdateContext(/*ORGANIZA ELEMENTOS NA TELA*/
+                  {
+                      ElementosTelaInicial: true,
+                      posY: 0,
+                      VcContador: 0
+                  }
+              );
+              Set(/*CARREGA TEMAS*/
+                  vg_TemaAqua,
+                  {
+                      ColorHeader: RGBA(
+                          58,
+                          188,
+                          182,
+                          1
+                      ),
+                      ColorHeaderTxt: "#3abcb6",
+                      ColorMenu: RGBA(
+                          21,
+                          135,
+                          128,
+                          1
+                      ),
+                      ColorMenuTxt: "#158780",
+                      ColorContent: RGBA(
+                          79,
+                          197,
+                          191,
+                          1
+                      ),
+                      ColorContentTxt: "#4fc5bf",
+                      ColorFont: RGBA(
+                          69,
+                          69,
+                          69,
+                          1
+                      ),
+                      ColorFontTxt: "#454545",
+                      ColorFont2: RGBA(
+                          69,
+                          69,
+                          69,
+                          1
+                      ),
+                      ColorFont2Txt: "#454545",
+                      ColorBG: RGBA(
+                          167,
+                          226,
+                          223,
+                          1
+                      ),
+                      ColorBGTxt: "#a7e2df"
+                  }
+              );
+              Set(
+                  vg_TemaVerde,
+                  {
+                      ColorHeader: RGBA(
+                          8,
+                          134,
+                          67,
+                          1
+                      ),
+                      ColorHeaderTxt: "#088643",
+                      ColorMenu: RGBA(
+                          14,
+                          101,
+                          51,
+                          1
+                      ),
+                      ColorMenuTxt: "#0e6533",
+                      ColorContent: RGBA(
+                          39,
+                          166,
+                          99,
+                          1
+                      ),
+                      ColorContentTxt: "#27a663",
+                      ColorFont: RGBA(
+                          255,
+                          255,
+                          255,
+                          1
+                      ),
+                      ColorFontTxt: "#ffffff",
+                      ColorFont2: RGBA(
+                          255,
+                          255,
+                          255,
+                          1
+                      ),
+                      ColorFont2Txt: "#ffffff",
+                      ColorBG: RGBA(
+                          179,
+                          192,
+                          179,
+                          1
+                      ),
+                      ColorBGTxt: "#b3c0b3"
+                  }
+              );
+              Set(
+                  vg_TemaAmarelo,
+                  {
+                      ColorHeader: RGBA(
+                          253,
+                          199,
+                          49,
+                          1
+                      ),
+                      ColorHeaderTxt: "#fdc731",
+                      ColorMenu: RGBA(
+                          190,
+                          150,
+                          32,
+                          1
+                      ),
+                      ColorMenuTxt: "#be9620",
+                      ColorContent: RGBA(
+                          253,
+                          214,
+                          103,
+                          1
+                      ),
+                      ColorContentTxt: "#fdd667",
+                      ColorFont: RGBA(
+                          0,
+                          0,
+                          0,
+                          1
+                      ),
+                      ColorFontTxt: "#000000",
+                      ColorFont2: RGBA(
+                          0,
+                          0,
+                          0,
+                          1
+                      ),
+                      ColorFont2Txt: "#000000",
+                      ColorBG: RGBA(
+                          254,
+                          234,
+                          179,
+                          1
+                      ),
+                      ColorBGTxt: "#feeab3"
+                  }
+              );
+              Set(
+                  vg_TemaTerracota,
+                  {
+                      ColorHeader: RGBA(
+                          236,
+                          140,
+                          8,
+                          1
+                      ),
+                      ColorHeaderTxt: "#ec8c08",
+                      ColorMenu: RGBA(
+                          178,
+                          105,
+                          21,
+                          1
+                      ),
+                      ColorMenuTxt: "#b26915",
+                      ColorContent: RGBA(
+                          238,
+                          156,
+                          71,
+                          1
+                      ),
+                      ColorContentTxt: "#ee9c47",
+                      ColorFont: RGBA(
+                          0,
+                          0,
+                          0,
+                          1
+                      ),
+                      ColorFontTxt: "#000000",
+                      ColorFont2: RGBA(
+                          0,
+                          0,
+                          0,
+                          1
+                      ),
+                      ColorFont2Txt: "#000000",
+                      ColorBG: RGBA(
+                          246,
+                          205,
+                          163,
+                          1
+                      ),
+                      ColorBGTxt: "#f6cda3"
+                  }
+              );
+              Set(
+                  vg_TemaEscuro,
+                  {
+                      ColorHeader: RGBA(
+                          31/*83*/,
+                          31,
+                          31,
+                          1
+                      ),
+                      ColorHeaderTxt: "#1f1f1f",
+                      ColorMenu: RGBA(
+                          22,
+                          24,
+                          24,
+                          1
+                      ),
+                      ColorMenuTxt: "#161818",
+                      ColorContent: RGBA(
+                          50/*102*/,
+                          50,
+                          50,
+                          1
+                      ),
+                      ColorContentTxt: "#323232",
+                      ColorFont: RGBA(
+                          146,
+                          146,
+                          146,
+                          1
+                      ),
+                      ColorFontTxt: "#929292",
+                      ColorFont2: RGBA(
+                          255,
+                          255,
+                          255,
+                          1
+                      ),
+                      ColorFont2Txt: "#ffffff",
+                      ColorBG: RGBA(
+                          102,
+                          102,
+                          102/*146*/,
+                          1
+                      ),
+                      ColorBGTxt: "#666666"
+                  }
+              );
+              Set(
+                  vg_TemaCitrico,
+                  {
+                      ColorHeader: RGBA(
+                          192,
+                          210,
+                          18,
+                          1
+                      ),
+                      ColorHeaderTxt: "#c2d212",
+                      ColorMenu: RGBA(
+                          147,
+                          162,
+                          34,
+                          1
+                      ),
+                      ColorMenuTxt: "#93a222",
+                      ColorContent: RGBA(
+                          211,
+                          229,
+                          17,
+                          1
+                      ),
+                      ColorContentTxt: "#d3e511",
+                      ColorFont: RGBA(
+                          0,
+                          0,
+                          0,
+                          1
+                      ),
+                      ColorFontTxt: "#000000",
+                      ColorFont2: RGBA(
+                          0,
+                          0,
+                          0,
+                          1
+                      ),
+                      ColorFont2Txt: "#000000",
+                      ColorBG: RGBA(
+                          233,
+                          242,
+                          136,
+                          1
+                      ),
+                      ColorBGTxt: "#e9f288"
+                  }
+              );
+              Set(
+                  vg_TemaAzul,
+                  {
+                      ColorHeader: RGBA(
+                          152,
+                          186,
+                          247,
+                          1
+                      ),
+                      ColorHeaderTxt: "#98baf7",
+                      ColorMenu: RGBA(
+                          107,
+                          173,
+                          247,
+                          1
+                      ),
+                      ColorMenuTxt: "#6badf7",
+                      ColorContent: RGBA(
+                          191,
+                          219,
+                          255,
+                          1
+                      ),
+                      ColorContentTxt: "#bfdbff",
+                      ColorFont: RGBA(
+                          69,
+                          69,
+                          69,
+                          1
+                      ),
+                      ColorFontTxt: "#454545",
+                      ColorFont2: RGBA(
+                          69,
+                          69,
+                          69,
+                          1
+                      ),
+                      ColorFont2Txt: "#454545",
+                      ColorBG: RGBA(
+                          201,
+                          218,
+                          238,
+                          1
+                      ),
+                      ColorBGTxt: "#c9daee"
+                  }
+              );
+              Set(
+                  vg_TemaOldPC,
+                  {
+                      ColorHeader: RGBA(
+                          1,
+                          0,
+                          137,
+                          1
+                      ),
+                      ColorHeaderTxt: "#010089",
+                      ColorMenu: RGBA(
+                          128,
+                          128,
+                          128,
+                          1
+                      ),
+                      ColorMenuTxt: "#808080",
+                      ColorContent: RGBA(
+                          212,
+                          207,
+                          201,
+                          1
+                      ),
+                      ColorContentTxt: "#d4cfc9",
+                      ColorFont: RGBA(
+                          1,
+                          1,
+                          1,
+                          1
+                      ),
+                      ColorFontTxt: "#010101",
+                      ColorFont2: RGBA(
+                          255,
+                          255,
+                          255,
+                          1
+                      ),
+                      ColorFont2Txt: "#ffffff",
+                      ColorBG: RGBA(
+                          239,
+                          238,
+                          234,
+                          1
+                      ),
+                      ColorBGTxt: "#efeeea"
+                  }
+              );
+              Set(
+                  vg_TemaFosforoVerde,
+                  {
+                      ColorHeader: RGBA(
+                          40,
+                          80,
+                          50,
+                          1
+                      ),
+                      ColorHeaderTxt: "#285032",
+                      ColorMenu: RGBA(
+                          50,
+                          136,
+                          50,
+                          1
+                      ),
+                      ColorMenuTxt: "#0a8832",
+                      ColorContent: RGBA(
+                          20,
+                          50,
+                          20,
+                          1
+                      ),
+                      ColorContentTxt: "#143214",
+                      ColorFont: RGBA(
+                          0,
+                          255,
+                          0,
+                          1
+                      ),
+                      ColorFontTxt: "#00ff00",
+                      ColorFont2: RGBA(
+                          0,
+                          255,
+                          0,
+                          1
+                      ),
+                      ColorFont2Txt: "#00ff00",
+                      ColorBG: RGBA(
+                          0,
+                          0,
+                          0,
+                          1
+                      ),
+                      ColorBGTxt: "#000000"
+                  }
+              );
+              If(/*IDENTIFICA SE O USUÁRIO É NOVO OU RECORRENTE*/
+                  vcNewUser = false,/*CASO USUÁRIO RECORRENTE, CARREGA ULTIMA OPÇÃO DE TEMA*/
+                  Switch(/*CARREGA TEMA PREFERIDO*/
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          Tema
+                      ),
+                      "Aqua",
+                      Set(
+                          vg_AppTheme,
+                          vg_TemaAqua
+                      ),
+                      "Azul",
+                      Set(
+                          vg_AppTheme,
+                          vg_TemaAzul
+                      ),
+                      "Old PC",
+                      Set(
+                          vg_AppTheme,
+                          vg_TemaOldPC
+                      ),
+                      "Verde",
+                      Set(
+                          vg_AppTheme,
+                          vg_TemaVerde
+                      ),
+                      "Amarelo",
+                      Set(
+                          vg_AppTheme,
+                          vg_TemaAmarelo
+                      ),
+                      "Terracota",
+                      Set(
+                          vg_AppTheme,
+                          vg_TemaTerracota
+                      ),
+                      "Escuro",
+                      Set(
+                          vg_AppTheme,
+                          vg_TemaEscuro
+                      ),
+                      "Cítrico",
+                      Set(
+                          vg_AppTheme,
+                          vg_TemaCitrico
+                      ),/*CARREGA TEMA AQUA CASO SEJA NOVO USUÁRIO*/
+                      Set(
+                          vg_AppTheme,
+                          vg_TemaAqua
+                      )
+                  )
+              );
+              Set(
+                  VgEvento,
+                  LookUp(
+                      DadosParada,
+                      Título = LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          ÚltimaVisita
+                      )
+                  )
+              );
+              Set(//carrega data e hora da ultima visita.
+                  vgAcessoAnterior,
+                  LookUp(
+                      OpçãoUsuário,
+                      Título = User().Email,
+                      UltimoAcesso
+                  )
+              );
+              If(/*SE O REGISTRO DA ÚLTIMA VISITA ESTIVER EM BRANCO, RESETA O APP*/
+                  IsBlank(/*SE NÃO EXISTIR REGISTRO DA ÚLTIMA VISITA*/
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          ÚltimaVisita
+                      )
+                  ),
+                  Set(/*RESETA APP*/
+                      VgReset,
+                      true
+                  ),
+                  Set(/*CARREGA ÚLTIMA VISITA NA VARIAVEL DE FUNÇÃO*/
+                      VgFunção,
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          ÚltimaVisita
+                      )
+                  )
+              );
+              If(/*DEFINE SE O MENU INICIA EXTENDIDO OU MINIMIZADO*/
+                  IsBlank(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          MenuExtendido
+                      )
+                  ),
+                  Set(
+                      vgMenuExtendido,
+                      true
+                  ),
+                  If(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          MenuExtendido
+                      ) = "true",
+                      Set(
+                          vgMenuExtendido,
+                          true
+                      ),
+                      Set(
+                          vgMenuExtendido,
+                          false
+                      )
+                  )
+              );
+              If(/*DEFINE SE O BOTÃO EQUIPAMENTOS INICIA VISUALIZADO NO MENU DE PARADAS*/
+                  IsBlank(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtEquipamento
+                      )
+                  ),
+                  Set(
+                      vgBtEquipamento,
+                      false
+                  ),
+                  If(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtEquipamento
+                      ) = "true",
+                      Set(
+                          vgBtEquipamento,
+                          true
+                      ),
+                      Set(
+                          vgBtEquipamento,
+                          false
+                      )
+                  )
+              );
+              If(/*DEFINE SE O BOTÃO EQUIPE INICIA VISUALIZADO NO MENU DE PARADAS*/
+                  IsBlank(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtEquipe
+                      )
+                  ),
+                  Set(
+                      vgBtEquipe,
+                      false
+                  ),
+                  If(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtEquipe
+                      ) = "true",
+                      Set(
+                          vgBtEquipe,
+                          true
+                      ),
+                      Set(
+                          vgBtEquipe,
+                          false
+                      )
+                  )
+              );
+              If(/*DEFINE SE O BOTÃO VISÃO ADMIN INICIA VISUALIZADO NO MENU DE PARADAS*/
+                  IsBlank(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtVisãoAdimin
+                      )
+                  ),
+                  Set(
+                      vgBtVisãoAdimin,
+                      false
+                  ),
+                  If(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtVisãoAdimin
+                      ) = "true",
+                      Set(
+                          vgBtVisãoAdimin,
+                          true
+                      ),
+                      Set(
+                          vgBtVisãoAdimin,
+                          false
+                      )
+                  )
+              );
+              If(/*DEFINE SE O BOTÃO VISÃO PLANEJADOR INICIA VISUALIZADO NO MENU DE PARADAS*/
+                  IsBlank(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtVisãoPlanejador
+                      )
+                  ),
+                  Set(
+                      vgBtVisãoPlanejador,
+                      false
+                  ),
+                  If(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtVisãoPlanejador
+                      ) = "true",
+                      Set(
+                          vgBtVisãoPlanejador,
+                          true
+                      ),
+                      Set(
+                          vgBtVisãoPlanejador,
+                          false
+                      )
+                  )
+              );
+              If(/*DEFINE SE O BOTÃO PAINEL BPI INICIA VISUALIZADO NO MENU DE PARADAS*/
+                  IsBlank(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtPainelPBI
+                      )
+                  ),
+                  Set(
+                      vgBtPainelPBI,
+                      false
+                  ),
+                  If(
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email,
+                          BtPainelPBI
+                      ) = "true",
+                      Set(
+                          vgBtPainelPBI,
+                          true
+                      ),
+                      Set(
+                          vgBtPainelPBI,
+                          false
+                      )
+                  )
+              )
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            Visible: =false
+            X: =40
+            Y: =40
+      - Image41:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =55
+            Image: ='1497 (1)'
+            Visible: |-
+              =If(
+                  posY>0,false,true
+              )
+            Width: =52
+            X: =680
+            Y: =516
+      - Image22:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =263
+            Image: =loupe
+            Width: =236
+            X: =353
+            Y: =228-posY
+      - Label32:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(77, 77, 77, 1)
+            Font: =Font.'Open Sans'
+            FontWeight: =FontWeight.Lighter
+            Italic: =true
+            Size: =20
+            Text: |-
+              =Switch(VcContador,
+                  -1,"LABORATÓRIO",
+                  0,"PARADAS",
+                  1,"PLANOS DE INSPEÇÃO",
+                  2, "ROTINA"
+              )
+            Underline: =true
+            Visible: "=If(\r\n    posY=0,false,true\r\n    \r\n)"
+            Width: =274
+            X: =573
+            Y: =340
+      - NextArrow21_1:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 134, 208, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+              =UpdateContext({VcContador: VcContador+1})
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="Exibir detalhes do item"
+            Visible: |-
+              =If(
+                  posY=0,false,
+                  If(
+                      VcContador=2,false,true
+                  )
+              )
+            Width: =50
+            X: =856
+            Y: =335
+      - NextArrow21_2:
+          Control: Classic/Icon@2.5.0
+          Properties:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0, 134, 208, 1)
+            Height: =50
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+              =UpdateContext({VcContador: VcContador-1})
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="Exibir detalhes do item"
+            Visible: |-
+              =If(
+                  posY=0,false,
+                  If(
+                      VcContador=-1,false,true
+                  )
+              )
+            Width: =50
+            X: =518
+            Y: =335
+      - Button1:
+          Control: Classic/Button@2.2.0
+          Properties:
+            BorderColor: =ColorFade(Self.Fill, -15%)
+            BorderThickness: =0
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Font: =Font.'Open Sans'
+            HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+            OnSelect: |-
+              =Switch(
+                  VcContador,/*verifica qual a função em destaque*/
+                  -1,
+                  Set(
+                      VgFunção,
+                      "laboratório"
+                  );
+                  Set(
+                      VgEvento,
+                      Blank()
+                  );
+                  Set(
+                      VgReset,
+                      false
+                  );
+                  Patch(
+                      OpçãoUsuário,
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email
+                      ),
+                      {ÚltimaVisita: VgFunção}
+                  );
+                  Navigate(
+                      'TelaInicial 2.0',
+                      ScreenTransition.Fade
+                  ),
+                  0,
+                  false,/*na função 'Paradas' não toma nenhuma ação*/
+                  1,
+                  Set(
+                      VgFunção,
+                      "planos"
+                  );
+                  Set(
+                      VgEvento,
+                      Blank()
+                  );
+                  Set(
+                      VgReset,
+                      false
+                  );
+                  Patch(
+                      OpçãoUsuário,
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = User().Email
+                      ),
+                      {ÚltimaVisita: VgFunção}
+                  );
+                  Navigate(
+                      'TelaInicial 2.0',
+                      ScreenTransition.Fade
+                  ),
+                  2,
+                  Set(
+                      VgFunção,
+                      "rotina"
+                  );
+                  Set(
+                      VgEvento,
+                      Blank()
+                  );
+                  Set(
+                      VgReset,
+                      false
+                  );
+                  Patch(
+                      OpçãoUsuário,
+                      LookUp(
+                          OpçãoUsuário,
+                          Título = "rotina"
+                      ),
+                      {ÚltimaVisita: VgFunção}
+                  );
+                  Navigate(
+                      'TelaInicial 2.0',
+                      ScreenTransition.Fade
+                  )
+              )
+            PressedBorderColor: =Self.Fill
+            PressedColor: =Self.Fill
+            PressedFill: =Self.Color
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Text: =
+            Visible: |-
+              =If(
+                  VcContador=0,false,true
+              )
+            Width: =250
+            X: =585
+            Y: =340

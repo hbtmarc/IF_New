@@ -1,0 +1,12 @@
+@"
+# Fonte do app: manter apenas *.pa.yaml
+*.sarif
+*.json
+*.msapp
+*.zip
+
+# Sistema/IDE
+.vscode/
+.DS_Store
+Thumbs.db
+"@ | Set-Content -Encoding UTF8 -Path (Join-Path $newRepo ".gitignore")
