@@ -1,12 +1,13 @@
-@"
-# Fonte do app: manter apenas *.pa.yaml
-*.sarif
-*.json
+# Power Apps source control (commit only .pa.yaml from canvas/Src)
 *.msapp
 *.zip
+*.sarif
 
-# Sistema/IDE
+# Local extraction output (do not commit)
+/extracted/
+/IF_extracted/
+
+# System/IDE
 .vscode/
 .DS_Store
 Thumbs.db
-"@ | Set-Content -Encoding UTF8 -Path (Join-Path $newRepo ".gitignore")

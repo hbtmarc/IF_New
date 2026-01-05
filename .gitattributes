@@ -1,3 +1,4 @@
+canvas/Src/*.pa.yaml text eol=lf
 *.pa.yaml text eol=lf
-*.yaml    text eol=lf
-*.yml     text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
