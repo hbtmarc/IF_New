@@ -1,0 +1,1422 @@
+﻿# Inventário de Telas e Controles
+
+## Old
+### ElementosGraficos
+
+**Nível 1**
+- svgImpedimentos
+- svgBandeiraInicio
+- svgBandeiraFim
+- svgAtividadesInspeção
+- svgOlhoLupa
+- svgPenaBg
+- svgPena
+- svgAnexos
+- svgCadastro
+- svgcCancelar
+- svgLançamento
+- svgCaneta
+- svgNr13
+- svgExecução
+- svgMensagem
+- svgEnviar
+- svgLupa
+- svgFluxo
+- svgLink
+- svgLogoGINSPEQ
+- svgChevronRight
+- svgPaperClip
+- svgFluxoEventosIcone
+- svgSap
+- svgDetalhesupPopUp
+- svgAtividadesManutenção
+- svgVoltar
+- svgManutanção
+- svgDireita
+- svgFiltro
+- svgPrancheta
+- svgDashLeft
+- svgDoubleDashLeft
+- svgBotãoPenaBG
+- svgDocCrono
+- svgMicroscopio
+- svgPasta
+- svgDisruption
+- svgResearch
+- svgCalendário
+- svgUsuários
+- svgFábrica
+- svgAdd
+- svgAdd_1
+- svgMensagem2
+- svgPrancheta_1
+- svgPena_1
+- svgFlopDisk
+- svgLapis
+- svgLapis_1
+- svgLista
+- svgAtividadesInspeção2
+
+**Nível 2**
+- (vazio)
+
+### Equipamentos 2.0
+
+**Nível 1**
+- HeaderPadrão_1
+- Image43_1
+- InspflowIdentificador_1
+- Image46_1
+- responsaveis
+- Fluxo de END's 2.0
+- Fluxo de Inspeção
+- Documentos
+- MenuParadas_5
+- Container19
+- Container20
+- PortaPopUps_Equipamentos
+
+**Nível 2**
+- HeaderPadrão_1>UserImag_40
+- HeaderPadrão_1>UserImag_39
+- HeaderPadrão_1>Lbl_pressurizador_10
+- HeaderPadrão_1>Lbl_pressurizador_9
+- HeaderPadrão_1>Container49_1
+- InspflowIdentificador_1>Label15_7
+- InspflowIdentificador_1>Label15_8
+- InspflowIdentificador_1>Image45_11
+- responsaveis>Label16_4
+- responsaveis>Image37
+- responsaveis>Label16_20
+- responsaveis>Image38
+- responsaveis>Image37_1
+- responsaveis>Label16_22
+- responsaveis>Image38_1
+- responsaveis>Button1_214
+- responsaveis>Button1_251
+- Fluxo de END's 2.0>Image52
+- Fluxo de END's 2.0>Button1_93
+- Fluxo de END's 2.0>Container24
+- Fluxo de Inspeção>Image52_1
+- Fluxo de Inspeção>Button1_94
+- Fluxo de Inspeção>Container22
+- Documentos>Label16_5
+- Documentos>Label16_25
+- Documentos>Label16_35
+- Documentos>Image91
+- Documentos>Container21
+- MenuParadas_5>ctnOrganizaBotões_5
+- MenuParadas_5>Label16_47
+- MenuParadas_5>Image46_16
+- MenuParadas_5>btRecolheMenu_5
+- MenuParadas_5>TrocaEqpto_20
+- MenuParadas_5>Container14_5
+- MenuParadas_5>Icon2_26
+- MenuParadas_5>Icon2_27
+- Container19>GlrEquipamentosTag
+- Container19>SelecMeuseqpTodosEqp
+- Container20>Label41
+- Container20>Gallery2
+- PortaPopUps_Equipamentos>PopUpLVs
+- PortaPopUps_Equipamentos>LoadingAnimation_4
+- PortaPopUps_Equipamentos>PopUpMensagemAtividades_4
+- PortaPopUps_Equipamentos>PopUpConfig_4
+
+### FluxoAtividades 2.0
+
+**Nível 1**
+- HeaderPadrão_3
+- Image43_3
+- InspflowIdentificador_3
+- Image46_3
+- HeaderGaleria
+- GlrFluxodeNotificações
+- GlrFluxodeEnds
+- HeaderGaleria_1
+- GlrFluxodeEnds_1
+- HeaderGaleria_2
+- MenuParadas_1
+- PortaPopUpsAtividades
+
+**Nível 2**
+- HeaderPadrão_3>UserImag_43
+- HeaderPadrão_3>UserImag_44
+- HeaderPadrão_3>Lbl_pressurizador_13
+- HeaderPadrão_3>Lbl_pressurizador_14
+- HeaderPadrão_3>Container46
+- InspflowIdentificador_3>Label15_11
+- InspflowIdentificador_3>Label15_12
+- InspflowIdentificador_3>Image45_13
+- HeaderGaleria>Label19
+- HeaderGaleria>Label19_1
+- HeaderGaleria>CbxFiltroTagGrupoFluxoEventos
+- HeaderGaleria>DrpTipoEvento
+- HeaderGaleria>Button3
+- HeaderGaleria>Button3_10
+- GlrFluxodeNotificações>Rectangle10_3
+- GlrFluxodeNotificações>Image50_1
+- GlrFluxodeNotificações>Title15_1
+- GlrFluxodeNotificações>Subtitle7_3
+- GlrFluxodeNotificações>Body6_1
+- GlrFluxodeNotificações>Separator15_1
+- GlrFluxodeNotificações>Rectangle16_1
+- GlrFluxodeNotificações>Button4
+- GlrFluxodeNotificações>Button3_16
+- GlrFluxodeEnds>Rectangle10_9
+- GlrFluxodeEnds>Subtitle7_4
+- GlrFluxodeEnds>Separator15_2
+- GlrFluxodeEnds>Image50_2
+- GlrFluxodeEnds>Title15_2
+- GlrFluxodeEnds>Button4_1
+- GlrFluxodeEnds>Button3_15
+- GlrFluxodeEnds>Body6_2
+- HeaderGaleria_1>Label19_2
+- HeaderGaleria_1>Label19_3
+- HeaderGaleria_1>CbxFiltroTagGrupoFluxoEventos_1
+- HeaderGaleria_1>DrpTipoEvento_1
+- HeaderGaleria_1>Label18
+- HeaderGaleria_1>Button3_11
+- HeaderGaleria_1>Button3_12
+- GlrFluxodeEnds_1>Rectangle10_4
+- GlrFluxodeEnds_1>Image50_3
+- GlrFluxodeEnds_1>Title15_3
+- GlrFluxodeEnds_1>Subtitle7_5
+- GlrFluxodeEnds_1>Body6_3
+- GlrFluxodeEnds_1>Separator15_3
+- GlrFluxodeEnds_1>Rectangle16_3
+- GlrFluxodeEnds_1>Button3_17
+- HeaderGaleria_2>Label19_4
+- HeaderGaleria_2>Label19_5
+- HeaderGaleria_2>CbxFiltroTagGrupoFluxoEventos_2
+- HeaderGaleria_2>DrpTipoEvento_2
+- HeaderGaleria_2>Label18_1
+- HeaderGaleria_2>Button3_13
+- HeaderGaleria_2>Button3_14
+- MenuParadas_1>ctnOrganizaBotões_1
+- MenuParadas_1>Label16_24
+- MenuParadas_1>Image46_11
+- MenuParadas_1>btRecolheMenu_1
+- MenuParadas_1>TrocaEqpto_14
+- MenuParadas_1>Container14_1
+- MenuParadas_1>Icon2_14
+- MenuParadas_1>Icon2_15
+- PortaPopUpsAtividades>PopUpBase
+- PortaPopUpsAtividades>LoadingAnimation_6
+- PortaPopUpsAtividades>LerMensagem
+- PortaPopUpsAtividades>PopUpMensagemAtividades
+- PortaPopUpsAtividades>MiniPopUpAnexos_1
+- PortaPopUpsAtividades>PopUpConfig
+
+### FluxodeEND's2.0
+
+**Nível 1**
+- Container54
+- HeaderPadrão_4
+- Image43_4
+- InspflowIdentificador_4
+- Image46_4
+- responsaveis_5
+- GlrFluxodeEnds_2
+- Detalhes Equipamento
+- Fluxo de END
+- DetalhamentoDaMedida
+- MenuParadas_4
+- PortaPopUpsFluxoENDs
+
+**Nível 2**
+- Container54>Button1_235
+- Container54>Button1_236
+- HeaderPadrão_4>UserImag_45
+- HeaderPadrão_4>UserImag_46
+- HeaderPadrão_4>Lbl_pressurizador_15
+- HeaderPadrão_4>Lbl_pressurizador_16
+- HeaderPadrão_4>Container49_2
+- InspflowIdentificador_4>Label15_13
+- InspflowIdentificador_4>Label15_14
+- InspflowIdentificador_4>Image45_14
+- responsaveis_5>Label16_40
+- responsaveis_5>Image37_4
+- responsaveis_5>Label16_44
+- responsaveis_5>Image38_4
+- responsaveis_5>Image37_8
+- responsaveis_5>Label16_45
+- responsaveis_5>Image38_6
+- responsaveis_5>Button1_211
+- responsaveis_5>Button1_212
+- GlrFluxodeEnds_2>Rectangle10
+- GlrFluxodeEnds_2>Image50_4
+- GlrFluxodeEnds_2>Title15_4
+- GlrFluxodeEnds_2>Subtitle7_6
+- GlrFluxodeEnds_2>Body6_4
+- GlrFluxodeEnds_2>Separator15_4
+- GlrFluxodeEnds_2>Rectangle16_4
+- GlrFluxodeEnds_2>Icon1
+- Detalhes Equipamento>CbxFiltroTag_1
+- Detalhes Equipamento>Image49
+- Detalhes Equipamento>Label23
+- Detalhes Equipamento>Image58
+- Detalhes Equipamento>Label24
+- Detalhes Equipamento>Image59
+- Detalhes Equipamento>Label24_2
+- Detalhes Equipamento>Image60
+- Detalhes Equipamento>Image60_1
+- Detalhes Equipamento>Image60_2
+- Detalhes Equipamento>Button1_215
+- Detalhes Equipamento>Button1_216
+- Detalhes Equipamento>Button1_217
+- Detalhes Equipamento>Button1_218
+- Fluxo de END>Label24_12
+- Fluxo de END>Container18
+- Fluxo de END>Image63
+- Fluxo de END>Button1_243
+- DetalhamentoDaMedida>Label24_1
+- DetalhamentoDaMedida>Image62
+- DetalhamentoDaMedida>Label24_5
+- DetalhamentoDaMedida>Label24_6
+- DetalhamentoDaMedida>Label24_7
+- DetalhamentoDaMedida>Label24_8
+- DetalhamentoDaMedida>Label24_9
+- DetalhamentoDaMedida>Label24_10
+- DetalhamentoDaMedida>Label10
+- MenuParadas_4>ctnOrganizaBotões_4
+- MenuParadas_4>Label16_38
+- MenuParadas_4>Image46_15
+- MenuParadas_4>btRecolheMenu_4
+- MenuParadas_4>TrocaEqpto_19
+- MenuParadas_4>Container14_4
+- MenuParadas_4>Icon2_23
+- MenuParadas_4>Icon2_24
+- PortaPopUpsFluxoENDs>LoadingAnimation_7
+- PortaPopUpsFluxoENDs>MiniPopUpAnexos
+- PortaPopUpsFluxoENDs>PoUPFluxodeEND's
+- PortaPopUpsFluxoENDs>PopUpLogAção_5
+- PortaPopUpsFluxoENDs>PopUpMensagemAtividades_3
+- PortaPopUpsFluxoENDs>PoUPFluxodeInspeção_6
+- PortaPopUpsFluxoENDs>PopUpConfig_2
+
+### FluxodeEquipe2.0
+
+**Nível 1**
+- GlrPessoas
+- InspflowIdentificador_7
+- HeaderPadrão_7
+- Image43_7
+- Image46_7
+- CBXBuscaColaborador
+- DetalhesColaborador
+- MenuParadas_6
+- PortaPopsUpsEquipe
+
+**Nível 2**
+- GlrPessoas>Rectangle10_5
+- GlrPessoas>Image87
+- GlrPessoas>Image85
+- GlrPessoas>Title22
+- GlrPessoas>Subtitle20
+- GlrPessoas>Body10
+- GlrPessoas>NextArrow17
+- GlrPessoas>Separator22
+- InspflowIdentificador_7>Label15_19
+- InspflowIdentificador_7>Label15_20
+- InspflowIdentificador_7>Image45_15
+- HeaderPadrão_7>UserImag_51
+- HeaderPadrão_7>UserImag_52
+- HeaderPadrão_7>Lbl_pressurizador_21
+- HeaderPadrão_7>Lbl_pressurizador_22
+- HeaderPadrão_7>Container49
+- DetalhesColaborador>glrResponsabilidades
+- DetalhesColaborador>Label16_79
+- DetalhesColaborador>Container25
+- MenuParadas_6>ctnOrganizaBotões_6
+- MenuParadas_6>Label16_39
+- MenuParadas_6>Image46_18
+- MenuParadas_6>btRecolheMenu_6
+- MenuParadas_6>TrocaEqpto_21
+- MenuParadas_6>Container14_6
+- MenuParadas_6>Icon2_29
+- MenuParadas_6>Icon2_30
+- PortaPopsUpsEquipe>PopUpMensagemAtividades_5
+- PortaPopsUpsEquipe>LoadingAnimation_13
+- PortaPopsUpsEquipe>PopUpConfig_5
+
+### FluxodeInspeção2.0
+
+**Nível 1**
+- InspflowIdentificador_5
+- HeaderPadrão_5
+- Image43_5
+- Image46_5
+- responsaveis_7
+- Detalhamento Equipamento Inspe
+- Detalhamento Medida Inspeção
+- Label16_71
+- GlrFluxodeInspeção
+- Fluxo Inspeção
+- MenuParadas_3
+- PortaPopUpsInspeção
+
+**Nível 2**
+- InspflowIdentificador_5>Label15_15
+- InspflowIdentificador_5>Label15_16
+- InspflowIdentificador_5>Image45_16
+- HeaderPadrão_5>UserImag_47
+- HeaderPadrão_5>UserImag_48
+- HeaderPadrão_5>Lbl_pressurizador_17
+- HeaderPadrão_5>Lbl_pressurizador_18
+- HeaderPadrão_5>Container49_3
+- responsaveis_7>Label16_66
+- responsaveis_7>Image38_8
+- responsaveis_7>Image38_9
+- responsaveis_7>Image37_13
+- responsaveis_7>Image37_14
+- responsaveis_7>Label16_69
+- responsaveis_7>Label16_70
+- responsaveis_7>Button1_244
+- responsaveis_7>Button1_245
+- Detalhamento Equipamento Inspe>Label24_14
+- Detalhamento Equipamento Inspe>Image49_4
+- Detalhamento Equipamento Inspe>Image58_1
+- Detalhamento Equipamento Inspe>CbxFiltroTag_6
+- Detalhamento Equipamento Inspe>Image59_1
+- Detalhamento Equipamento Inspe>Image60_4
+- Detalhamento Equipamento Inspe>Label23_1
+- Detalhamento Equipamento Inspe>Image60_5
+- Detalhamento Equipamento Inspe>Button1_246
+- Detalhamento Equipamento Inspe>Button1_247
+- Detalhamento Medida Inspeção>Label24_18
+- Detalhamento Medida Inspeção>Label24_22
+- Detalhamento Medida Inspeção>Label24_23
+- Detalhamento Medida Inspeção>Label24_24
+- Detalhamento Medida Inspeção>Label38
+- GlrFluxodeInspeção>Rectangle10_7
+- GlrFluxodeInspeção>Rectangle16_5
+- GlrFluxodeInspeção>Title15_5
+- GlrFluxodeInspeção>Image50_5
+- GlrFluxodeInspeção>Icon1_2
+- GlrFluxodeInspeção>Subtitle7_7
+- GlrFluxodeInspeção>Separator15_5
+- GlrFluxodeInspeção>Title15_8
+- Fluxo Inspeção>Label24_26
+- Fluxo Inspeção>Container12
+- Fluxo Inspeção>Image63_1
+- Fluxo Inspeção>Button1_248
+- MenuParadas_3>ctnOrganizaBotões_3
+- MenuParadas_3>Label16_41
+- MenuParadas_3>Image46_13
+- MenuParadas_3>btRecolheMenu_3
+- MenuParadas_3>TrocaEqpto_18
+- MenuParadas_3>Container14_3
+- MenuParadas_3>Icon2_20
+- MenuParadas_3>Icon2_21
+- PortaPopUpsInspeção>PopUpLogAção_1
+- PortaPopUpsInspeção>MiniPopUpAnexosFluxoInsp
+- PortaPopUpsInspeção>LoadingAnimation_8
+- PortaPopUpsInspeção>PopUpMensagemAtividades_1
+- PortaPopUpsInspeção>PoUPFluxodeInspeção_5
+- PortaPopUpsInspeção>PopUpConfig_1
+
+### FluxodeManutenção2.0
+
+**Nível 1**
+- InspflowIdentificador_8
+- Menu_8
+- HeaderPadrão_8
+- Image43_8
+- Image46_8
+- responsaveis_8
+- Detalhamento Equipamento Inspe_1
+- Detalhamento Medida Inspeção_1
+- Label16_85
+- GlrFluxodeManutenção
+- Fluxo Inspeção_1
+- MiniPopUpAnexosFluxoInsp_1
+- PopUpEquipamentosMensagem_4
+- PopUpLogAção_2
+- PortaPopManutenção
+
+**Nível 2**
+- InspflowIdentificador_8>Label15_21
+- InspflowIdentificador_8>Label15_22
+- InspflowIdentificador_8>Image45_17
+- Menu_8>ButtonEquipamentos_9
+- Menu_8>Button1_259
+- Menu_8>Button1_265
+- Menu_8>Button1_266
+- Menu_8>Label16_42
+- Menu_8>Button1_260
+- Menu_8>Button1_264
+- Menu_8>Button1_262
+- Menu_8>Button1_263
+- Menu_8>Button1_261
+- Menu_8>Button1_267
+- Menu_8>Button1_268
+- Menu_8>Image4_11
+- HeaderPadrão_8>UserImag_53
+- HeaderPadrão_8>UserImag_55
+- HeaderPadrão_8>Lbl_pressurizador_23
+- HeaderPadrão_8>Lbl_Nome_24
+- HeaderPadrão_8>Lbl_perfil_25
+- HeaderPadrão_8>Lbl_pressurizador_24
+- responsaveis_8>Label16_82
+- responsaveis_8>Image38_10
+- responsaveis_8>Image38_11
+- responsaveis_8>Image37_19
+- responsaveis_8>Image37_20
+- responsaveis_8>Label16_83
+- responsaveis_8>Label16_84
+- responsaveis_8>Button1_270
+- responsaveis_8>Button1_269
+- Detalhamento Equipamento Inspe_1>Label24_15
+- Detalhamento Equipamento Inspe_1>Image49_5
+- Detalhamento Equipamento Inspe_1>Image58_2
+- Detalhamento Equipamento Inspe_1>CbxFiltroTag_9
+- Detalhamento Equipamento Inspe_1>Image59_2
+- Detalhamento Equipamento Inspe_1>Image60_6
+- Detalhamento Equipamento Inspe_1>Label23_2
+- Detalhamento Equipamento Inspe_1>Button1_272
+- Detalhamento Medida Inspeção_1>Label24_19
+- Detalhamento Medida Inspeção_1>Label24_28
+- Detalhamento Medida Inspeção_1>Label24_29
+- Detalhamento Medida Inspeção_1>Label24_30
+- Detalhamento Medida Inspeção_1>Label24_31
+- Detalhamento Medida Inspeção_1>Image62_2
+- Detalhamento Medida Inspeção_1>Button1_221
+- Detalhamento Medida Inspeção_1>Label13
+- GlrFluxodeManutenção>Rectangle16_7
+- GlrFluxodeManutenção>Title15_7
+- GlrFluxodeManutenção>Image50_7
+- GlrFluxodeManutenção>Icon1_3
+- GlrFluxodeManutenção>Subtitle7_9
+- GlrFluxodeManutenção>Body6_7
+- GlrFluxodeManutenção>Separator15_7
+- Fluxo Inspeção_1>Label24_33
+- Fluxo Inspeção_1>Image65_6
+- Fluxo Inspeção_1>Image65_9
+- Fluxo Inspeção_1>Image67_6
+- Fluxo Inspeção_1>Image67_9
+- Fluxo Inspeção_1>Image66_6
+- Fluxo Inspeção_1>Image66_9
+- Fluxo Inspeção_1>Image70_8
+- Fluxo Inspeção_1>Label21_9
+- Fluxo Inspeção_1>Image70_9
+- Fluxo Inspeção_1>Label21_8
+- Fluxo Inspeção_1>Image65_7
+- Fluxo Inspeção_1>Image66_7
+- Fluxo Inspeção_1>Image67_7
+- Fluxo Inspeção_1>Image70_10
+- Fluxo Inspeção_1>Label21_10
+- Fluxo Inspeção_1>Image67_10
+- Fluxo Inspeção_1>Image68_2
+- Fluxo Inspeção_1>Image70_12
+- Fluxo Inspeção_1>Label21_12
+- Fluxo Inspeção_1>Image63_5
+- Fluxo Inspeção_1>Button1_252
+- MiniPopUpAnexosFluxoInsp_1>Image61_4
+- MiniPopUpAnexosFluxoInsp_1>Label25_4
+- MiniPopUpAnexosFluxoInsp_1>FrmVerAnexoEtapaEND_2
+- MiniPopUpAnexosFluxoInsp_1>Image14_59
+- MiniPopUpAnexosFluxoInsp_1>Button1_274
+- PopUpEquipamentosMensagem_4>Image44_14
+- PopUpEquipamentosMensagem_4>Label8_27
+- PopUpEquipamentosMensagem_4>Timer2_9
+- PopUpEquipamentosMensagem_4>FrmMensagem_8
+- PopUpEquipamentosMensagem_4>Image17_26
+- PopUpEquipamentosMensagem_4>Button1_254
+- PopUpEquipamentosMensagem_4>Image14_56
+- PopUpEquipamentosMensagem_4>Button1_255
+- PopUpLogAção_2>Image44_15
+- PopUpLogAção_2>Label8_28
+- PopUpLogAção_2>FrmNovoAnexo_2
+- PopUpLogAção_2>Label16_58
+- PopUpLogAção_2>Label16_81
+- PopUpLogAção_2>FrmVerLogAção_2
+- PopUpLogAção_2>GlrPopUpLogAção_2
+- PopUpLogAção_2>Image14_57
+- PopUpLogAção_2>Button1_256
+- PopUpLogAção_2>Button1_257
+- PopUpLogAção_2>Image14_58
+- PopUpLogAção_2>Button1_258
+- PortaPopManutenção>PopUpLogAção_4
+- PortaPopManutenção>MiniPopUpAnexosFluxoInsp_2
+- PortaPopManutenção>LoadingAnimation_9
+- PortaPopManutenção>PopUpTurnoMensagem_3
+- PortaPopManutenção>PoUPAnalisePLHManutenção
+- PortaPopManutenção>PoUPFluxodeInspeção_1
+
+### LabFluxoSolicitações
+
+**Nível 1**
+- InspflowIdentificador_10
+- HeaderPadrão_10
+- Image43_10
+- cntDetalhesSolicitação
+- cntSolicitante
+- cntFluxoSolicitações
+- PopUpSolicitaçõesLabMensagem
+- Container11
+- MenuLab_1
+- glrListaSolicitaçõesTelaSolicitações
+- PortaPopups_2
+
+**Nível 2**
+- InspflowIdentificador_10>Image45_20
+- InspflowIdentificador_10>Label15_25
+- InspflowIdentificador_10>Label15_26
+- HeaderPadrão_10>UserImag_58
+- HeaderPadrão_10>UserImag_59
+- HeaderPadrão_10>Lbl_PressurizadorTitulo_1
+- HeaderPadrão_10>Lbl_PressurizadorDatas_1
+- HeaderPadrão_10>Container44
+- cntDetalhesSolicitação>Label34
+- cntDetalhesSolicitação>FormViewer5
+- cntDetalhesSolicitação>Container16
+- cntSolicitante>Label34_1
+- cntSolicitante>Container43
+- cntFluxoSolicitações>Container27
+- cntFluxoSolicitações>Container27_1
+- PopUpSolicitaçõesLabMensagem>Image14_66
+- PopUpSolicitaçõesLabMensagem>Button1_323
+- PopUpSolicitaçõesLabMensagem>Image17_28
+- PopUpSolicitaçõesLabMensagem>Button1_322
+- PopUpSolicitaçõesLabMensagem>Image44_17
+- PopUpSolicitaçõesLabMensagem>Label8_30
+- PopUpSolicitaçõesLabMensagem>frmMensagemSolicitações
+- PopUpSolicitaçõesLabMensagem>Label34_8
+- PopUpSolicitaçõesLabMensagem>Label34_10
+- PopUpSolicitaçõesLabMensagem>Label34_11
+- Container11>Toggle1
+- Container11>Container1_1
+- Container11>Container1
+- Container11>Container13
+- MenuLab_1>ctnOrganizaBotões_9
+- MenuLab_1>Label16_61
+- MenuLab_1>Image46_23
+- MenuLab_1>btRecolheMenu_9
+- MenuLab_1>TrocaEqpto_16
+- MenuLab_1>Container14_9
+- MenuLab_1>Icon2_36
+- glrListaSolicitaçõesTelaSolicitações>Rectangle7
+- glrListaSolicitaçõesTelaSolicitações>Image4
+- glrListaSolicitaçõesTelaSolicitações>Title25
+- glrListaSolicitaçõesTelaSolicitações>Subtitle21
+- glrListaSolicitaçõesTelaSolicitações>NextArrow20
+- glrListaSolicitaçõesTelaSolicitações>Separator25
+- PortaPopups_2>PopUpSolicitaçõesEncerradas
+- PortaPopups_2>PopUpLogAção_3
+- PortaPopups_2>PopUpMensagensNãoLidasLab_2
+- PortaPopups_2>PopUpAvisoLab_2
+- PortaPopups_2>PopUpMensagemLabTelaInicial_2
+- PortaPopups_2>PopUpNovaSolicitação
+- PortaPopups_2>LoadingAnimation_1
+- PortaPopups_2>PopUpConfig_11
+
+### LabPlanner
+
+**Nível 1**
+- InspflowIdentificador_11
+- HeaderPadrão_11
+- Image43_11
+- PopUpNovaSolicitação_1
+- Container4
+- Container6
+- Container7
+- MenuLab_2
+- PortaPopups_1
+
+**Nível 2**
+- InspflowIdentificador_11>Image45_21
+- InspflowIdentificador_11>Label15_27
+- InspflowIdentificador_11>Label15_28
+- HeaderPadrão_11>UserImag_60
+- HeaderPadrão_11>UserImag_61
+- HeaderPadrão_11>Lbl_PressurizadorTitulo_2
+- HeaderPadrão_11>Lbl_PressurizadorDatas_2
+- HeaderPadrão_11>Container45
+- PopUpNovaSolicitação_1>Label33_1
+- PopUpNovaSolicitação_1>Image93_1
+- PopUpNovaSolicitação_1>Image94_1
+- PopUpNovaSolicitação_1>FrmSolicitaçãoServiço_1
+- PopUpNovaSolicitação_1>Image17_30
+- PopUpNovaSolicitação_1>Button1_331
+- PopUpNovaSolicitação_1>Image14_68
+- PopUpNovaSolicitação_1>Button1_332
+- Container4>glrListaSolicitaçõesTelaTarefas
+- Container4>Dropdown2_1
+- Container4>ComboBox1_1
+- Container4>Label12
+- Container4>Label35
+- Container6>glrListaTarefasLab
+- Container6>Label1
+- Container6>Image2
+- Container6>btTrocar_false
+- Container6>btTrocar_true
+- Container7>Container5
+- Container7>Label5_9
+- Container7>Label5_8
+- Container7>Label4_1
+- Container7>Container31
+- Container7>Label5_10
+- Container7>Icon3
+- Container7>Container29
+- Container7>Container31_1
+- MenuLab_2>ctnOrganizaBotões_10
+- MenuLab_2>Label16_62
+- MenuLab_2>Image46_24
+- MenuLab_2>btRecolheMenu_10
+- MenuLab_2>TrocaEqpto_22
+- MenuLab_2>Container14_10
+- MenuLab_2>Icon2_37
+- PortaPopups_1>PopUpMensagensNãoLidasLab_1
+- PortaPopups_1>PopUpAvisoLab_1
+- PortaPopups_1>PopUpNovaSolicitação_2
+- PortaPopups_1>PopUpAvisoAtendimentoExterno
+- PortaPopups_1>LoadingAnimation_12
+- PortaPopups_1>MiniPopUpAnexosLab
+- PortaPopups_1>PopUpMensagemLabTelaInicial_5
+- PortaPopups_1>PopUpConfig_12
+
+### LoadingScreen
+
+**Nível 1**
+- Lbl_Saudação_11
+- Gallery1
+- Lbl_Saudação_10
+- Lbl_Saudação_12
+- Timer1
+- Image41
+- Image22
+- Label32
+- NextArrow21_1
+- NextArrow21_2
+- Button1
+
+**Nível 2**
+- Gallery1>Title26
+- Gallery1>Subtitle23
+- Gallery1>NextArrow21
+- Gallery1>Separator26
+- Gallery1>Rectangle31
+
+### Passagem de Serviço 2.0
+
+**Nível 1**
+- Icon12
+- GlrLivroTurno
+- HeaderPadrão_2
+- Image43_2
+- InspflowIdentificador_2
+- Image46_2
+- EquipeNotificada
+- DetahesRegistroTurno
+- MenuParadas_2
+- CtFiltrosPassagemServiço
+- PortaPopUps_Turno
+
+**Nível 2**
+- GlrLivroTurno>Rectangle10_2
+- GlrLivroTurno>Image50
+- GlrLivroTurno>Title15
+- GlrLivroTurno>Subtitle7
+- GlrLivroTurno>Body6
+- GlrLivroTurno>NextArrow12
+- GlrLivroTurno>Separator15
+- GlrLivroTurno>Rectangle16
+- HeaderPadrão_2>UserImag_42
+- HeaderPadrão_2>UserImag_38
+- HeaderPadrão_2>Lbl_pressurizador_12
+- HeaderPadrão_2>Lbl_pressurizador_11
+- HeaderPadrão_2>Container48
+- InspflowIdentificador_2>Label15_9
+- InspflowIdentificador_2>Label15_10
+- InspflowIdentificador_2>Image45_12
+- EquipeNotificada>Label16_26
+- EquipeNotificada>Container35
+- DetahesRegistroTurno>Image4_28
+- DetahesRegistroTurno>Label16_34
+- DetahesRegistroTurno>Label16_31
+- DetahesRegistroTurno>Label16_33
+- DetahesRegistroTurno>Image4_4
+- DetahesRegistroTurno>Button1_207
+- DetahesRegistroTurno>Button1_208
+- MenuParadas_2>ctnOrganizaBotões_2
+- MenuParadas_2>Label16_36
+- MenuParadas_2>Image46_12
+- MenuParadas_2>btRecolheMenu_2
+- MenuParadas_2>TrocaEqpto_17
+- MenuParadas_2>Container14_2
+- MenuParadas_2>Icon2_17
+- MenuParadas_2>Icon2_18
+- CtFiltrosPassagemServiço>SelecMeuseqpTodosEqp_1
+- CtFiltrosPassagemServiço>CbxFiltroTag
+- CtFiltrosPassagemServiço>DrpDiaNoite
+- PortaPopUps_Turno>PopUpPassagemServiço
+- PortaPopUps_Turno>LoadingAnimation_5
+- PortaPopUps_Turno>PoUPFluxodeInspeção_4
+- PortaPopUps_Turno>PopUpMensagemAtividades_2
+- PortaPopUps_Turno>MiniPopUpVerImpedimentos
+- PortaPopUps_Turno>PopUpConfig_3
+
+### PlanosAvaliaçãoVR
+
+**Nível 1**
+- InspflowIdentificador_14
+- HeaderPadrão_14
+- Image43_14
+- MenuDemaisFunções_6
+
+**Nível 2**
+- InspflowIdentificador_14>Image45_24
+- InspflowIdentificador_14>Label15_30
+- InspflowIdentificador_14>Label15_31
+- HeaderPadrão_14>UserImag_65
+- HeaderPadrão_14>UserImag_66
+- HeaderPadrão_14>Lbl_PressurizadorTitulo_5
+- HeaderPadrão_14>NomeUsuario_5
+- HeaderPadrão_14>PerfilUsuario_5
+- HeaderPadrão_14>Lbl_PressurizadorDatas_5
+- MenuDemaisFunções_6>Image46_19
+- MenuDemaisFunções_6>Label16_99
+- MenuDemaisFunções_6>BT1_6
+- MenuDemaisFunções_6>Bt2_6
+- MenuDemaisFunções_6>BT3_6
+- MenuDemaisFunções_6>Button1_413
+- MenuDemaisFunções_6>Button1_414
+- MenuDemaisFunções_6>Button1_415
+- MenuDemaisFunções_6>Button1_416
+- MenuDemaisFunções_6>Button1_417
+- MenuDemaisFunções_6>TrocaEqpto_9
+- MenuDemaisFunções_6>TrocaEqpto_10
+
+### PlanosHistórico
+
+**Nível 1**
+- Container9_19
+- Container9_18
+- Container9_17
+- MenuPlanos
+- Container9_9
+- InspflowIdentificador_13
+- HeaderPadrão_13
+- Image43_13
+- PortaPopupsHistorico
+
+**Nível 2**
+- Container9_19>Label7_29
+- Container9_19>CabeçalhoMecanismodeDano_8
+- Container9_19>Gallery3_10
+- Container9_19>Container56_5
+- Container9_18>CabeçalhoMecanismodeDano_7
+- Container9_18>Gallery3_4
+- Container9_18>Container58
+- Container9_17>Label7_27
+- Container9_17>Image6_19
+- Container9_17>Button3_28
+- Container9_17>CabeçalhoMecanismodeDano_3
+- Container9_17>Gallery3_13
+- Container9_17>Image6_20
+- Container9_17>Button3_29
+- MenuPlanos>ctnOrganizaBotões_12
+- MenuPlanos>Label16_1
+- MenuPlanos>Image46_9
+- MenuPlanos>btRecolheMenu_12
+- MenuPlanos>TrocaEqpto_25
+- MenuPlanos>Container14_12
+- MenuPlanos>Icon2_42
+- Container9_9>Image3_11
+- Container9_9>Button3_20
+- Container9_9>LblTagEqpto_1
+- Container9_9>Container58_2
+- Container9_9>BtVoltaEqpt_1
+- Container9_9>LabelTipoEquipto_8
+- Container9_9>LabelFabricante_6
+- Container9_9>LabelTipoEquipto_9
+- Container9_9>LabelFabricante_7
+- Container9_9>LabelTipoEquipto_10
+- Container9_9>LabelFabricante_8
+- Container9_9>LabelTipoEquipto_11
+- Container9_9>LabelTipoEquipto_12
+- Container9_9>LabelFabricante_9
+- Container9_9>LabelTipoEquipto_13
+- Container9_9>LabelFabricante_10
+- Container9_9>LabelTipoEquipto_14
+- Container9_9>LabelFabricante_11
+- Container9_9>LabelTipoEquipto_15
+- Container9_9>Container9_3
+- Container9_9>Button3_2
+- Container9_9>Button3_3
+- InspflowIdentificador_13>Image45_23
+- InspflowIdentificador_13>Label15_2
+- InspflowIdentificador_13>Label15_29
+- HeaderPadrão_13>UserImag_63
+- HeaderPadrão_13>UserImag_64
+- HeaderPadrão_13>Lbl_PressurizadorTitulo_4
+- HeaderPadrão_13>NomeUsuario_4
+- HeaderPadrão_13>PerfilUsuario_4
+- HeaderPadrão_13>Lbl_PressurizadorDatas_4
+- PortaPopupsHistorico>PopUpMensagensNãoLidasLab_3
+- PortaPopupsHistorico>PopUpAvisoLab_3
+- PortaPopupsHistorico>PopUpMensagemLabTelaInicial_3
+- PortaPopupsHistorico>LoadingAnimation_2
+- PortaPopupsHistorico>PopUpEditaMecanismodeDano_1
+- PortaPopupsHistorico>PopUpConfig_14
+
+### PlanosVisãoGeral
+
+**Nível 1**
+- DadosProjeto
+- InspflowIdentificador_12
+- HeaderPadrão_12
+- Image43_12
+- Container9_2
+- PlanodeInspeção
+- Container9_4
+- MenuPlanos_2
+- Container9_8
+- PortaPopupsVisãoGeral
+
+**Nível 2**
+- DadosProjeto>Lbl_Feixe
+- DadosProjeto>Label7_4
+- DadosProjeto>Container15
+- DadosProjeto>Container15_1
+- DadosProjeto>Container15_2
+- DadosProjeto>Container15_3
+- DadosProjeto>Container15_4
+- DadosProjeto>Container15_5
+- DadosProjeto>Container15_6
+- InspflowIdentificador_12>Image45_22
+- InspflowIdentificador_12>Label15_1
+- InspflowIdentificador_12>Label15_6
+- HeaderPadrão_12>UserImag_54
+- HeaderPadrão_12>UserImag_62
+- HeaderPadrão_12>Lbl_PressurizadorTitulo_3
+- HeaderPadrão_12>NomeUsuario_3
+- HeaderPadrão_12>PerfilUsuario_3
+- HeaderPadrão_12>Lbl_PressurizadorDatas_3
+- Container9_2>CabeçalhoDadosProjeto
+- Container9_2>Gallery3_8
+- PlanodeInspeção>Label7_5
+- PlanodeInspeção>CabeçalhoPlanoInsp
+- PlanodeInspeção>Container59
+- PlanodeInspeção>Container59_1
+- PlanodeInspeção>Container59_2
+- PlanodeInspeção>Container59_3
+- PlanodeInspeção>Container59_4
+- PlanodeInspeção>Label36_28
+- PlanodeInspeção>Gallery3_9
+- Container9_4>Label7_6
+- Container9_4>Gallery3
+- Container9_4>CabeçalhoMecanismodeDano
+- Container9_4>Image6
+- Container9_4>Button3_1
+- Container9_4>Image6_6
+- Container9_4>Button3_5
+- MenuPlanos_2>ctnOrganizaBotões_14
+- MenuPlanos_2>Label16_3
+- MenuPlanos_2>Image46_14
+- MenuPlanos_2>btRecolheMenu_14
+- MenuPlanos_2>TrocaEqpto_27
+- MenuPlanos_2>Container14_14
+- MenuPlanos_2>Icon2_44
+- Container9_8>Image3_7
+- Container9_8>Button3_18
+- Container9_8>LblTagEqpto
+- Container9_8>Container58_1
+- Container9_8>BtVoltaEqpt
+- Container9_8>LabelTipoEquipto
+- Container9_8>LabelFabricante
+- Container9_8>LabelTipoEquipto_1
+- Container9_8>LabelFabricante_1
+- Container9_8>LabelTipoEquipto_2
+- Container9_8>LabelFabricante_2
+- Container9_8>LabelTipoEquipto_3
+- Container9_8>LabelTipoEquipto_4
+- Container9_8>LabelFabricante_3
+- Container9_8>LabelTipoEquipto_5
+- Container9_8>LabelFabricante_4
+- Container9_8>LabelTipoEquipto_6
+- Container9_8>LabelFabricante_5
+- Container9_8>LabelTipoEquipto_7
+- Container9_8>Container9
+- PortaPopupsVisãoGeral>PopUpMensagensNãoLidasLab_4
+- PortaPopupsVisãoGeral>PopUpAvisoLab_4
+- PortaPopupsVisãoGeral>PopUpMensagemLabTelaInicial_4
+- PortaPopupsVisãoGeral>PopUpEditaMecanismodeDano
+- PortaPopupsVisãoGeral>LoadingAnimation_3
+- PortaPopupsVisãoGeral>PopUpConfig_13
+
+### Repositório
+
+**Nível 1**
+- FrmNovaSubmedida
+- FrmTornaEventoObsoleto
+- FrmVistoReprovaçãoNR-13
+- FrmVistoReprovaçãoPLH
+- FrmEditaAcompanhamento
+- FrmTornaEventoObsoleto(Impedimento)_1
+- FrmEditaAcompanhamentoFluxoInspeção_1
+- FrmTornaEventoObsoleto(Iniciar)_1
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)_1
+- PopUpEquipamentosMensagem_3
+- FrmTornaEventoObsoleto(Impedimento)
+- FrmEditaAcompanhamentoFluxoInspeção
+- FrmTornaEventoObsoleto(Iniciar)
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)
+- FrmTornaEventoObsoleto(Impedimento)_2
+- FrmEditaAcompanhamentoFluxoInspeção_2
+- FrmTornaEventoObsoleto(Iniciar)_2
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)_2
+- FrmCancelaSubmedidaPlanejamento
+- FrmEventosPlan
+- GlrPopUpplan_2
+- FrmVisualizarMedidaNãoPlanejada_3
+- FrmPlanejamentoNovaSubmedidaFluxoInsp
+- Label3_7
+- Label3_8
+- Label3_9
+- CbxSelecEquipPlan_3
+- frmFluxoInspeção(Tela passagem serviço)
+- MiniPopUpAnexosFluxoENDs
+
+**Nível 2**
+- FrmNovaSubmedida>IdInsp_DataCard1_1
+- FrmNovaSubmedida>Nº da Nota_DataCard1_1
+- FrmNovaSubmedida>Equipamento_DataCard1_1
+- FrmNovaSubmedida>Tipo1_DataCard1_1
+- FrmNovaSubmedida>Serviço_DataCard1_1
+- FrmNovaSubmedida>Cat_DataCard1_1
+- FrmNovaSubmedida>Nº Parte_DataCard1_1
+- FrmNovaSubmedida>Nº Medida_DataCard1_1
+- FrmNovaSubmedida>Nº SubMedida_DataCard1_1
+- FrmNovaSubmedida>Texto breve da Medida_DataCard1_1
+- FrmNovaSubmedida>Título da medida_DataCard2_1
+- FrmNovaSubmedida>PLH_DataCard1_1
+- FrmNovaSubmedida>TIE_DataCard1_1
+- FrmNovaSubmedida>EmailTIE_DataCard1_1
+- FrmNovaSubmedida>Trabalho_DataCard1_1
+- FrmNovaSubmedida>Data criação (Medida)_DataCard1_1
+- FrmNovaSubmedida>Status sistema Medida_DataCard1_1
+- FrmNovaSubmedida>Status usuário Medida_DataCard1_1
+- FrmNovaSubmedida>Criado por (Medida)_DataCard1_1
+- FrmNovaSubmedida>ZR-Medida_DataCard1_1
+- FrmNovaSubmedida>Check Nova_DataCard1_1
+- FrmNovaSubmedida>Ensaio/Serviço_DataCard1_1
+- FrmNovaSubmedida>Tipo Ensaio_DataCard1_1
+- FrmNovaSubmedida>Resp.Cadastro_DataCard2_1
+- FrmNovaSubmedida>Cadastrado_DataCard2_1
+- FrmNovaSubmedida>Resp.Execução_DataCard2_1
+- FrmNovaSubmedida>Executado_DataCard2_1
+- FrmNovaSubmedida>Resp.Lançamento_DataCard2_1
+- FrmNovaSubmedida>Lançado_DataCard3_1
+- FrmNovaSubmedida>TX_EmailPLH_DataCard1_1
+- FrmNovaSubmedida>TextoMedidaMãe_DataCard2_1
+- FrmNovaSubmedida>EmailPLH_DataCard1_1
+- FrmNovaSubmedida>Análise NR-13_DataCard2_1
+- FrmNovaSubmedida>Resp.Análise NR13_DataCard2_1
+- FrmTornaEventoObsoleto>Notificação Obrigatória_DataCard6_2
+- FrmTornaEventoObsoleto>VistoUP_DataCard1_2
+- FrmTornaEventoObsoleto>VistoUS_DataCard1_2
+- FrmVistoReprovaçãoNR-13>Notificação Obrigatória_DataCard6_3
+- FrmVistoReprovaçãoNR-13>VistoUP_DataCard1_3
+- FrmVistoReprovaçãoNR-13>VistoUS_DataCard1_3
+- FrmVistoReprovaçãoPLH>Notificação Obrigatória_DataCard6_4
+- FrmVistoReprovaçãoPLH>VistoUP_DataCard1_4
+- FrmVistoReprovaçãoPLH>VistoUS_DataCard1_4
+- FrmEditaAcompanhamento>Resp.Anexar_DataCard4
+- FrmEditaAcompanhamento>Anexado_DataCard4
+- FrmEditaAcompanhamento>Resp.Análise NR13_DataCard1_1
+- FrmEditaAcompanhamento>Análise NR-13_DataCard1_1
+- FrmEditaAcompanhamento>Resp.Lançamento_DataCard1_1
+- FrmEditaAcompanhamento>Lançado_DataCard1_1
+- FrmEditaAcompanhamento>Cadastrado_DataCard1_1
+- FrmEditaAcompanhamento>Resp.Cadastro_DataCard1_1
+- FrmEditaAcompanhamento>Executado_DataCard1_1
+- FrmEditaAcompanhamento>Resp.Execução_DataCard1_1
+- FrmEditaAcompanhamento>Analisado e assinado_DataCard1_1
+- FrmEditaAcompanhamento>Resp.Assinatura_DataCard1_1
+- FrmTornaEventoObsoleto(Impedimento)_1>Notificação Obrigatória_DataCard6_9
+- FrmTornaEventoObsoleto(Impedimento)_1>VistoUP_DataCard1_9
+- FrmTornaEventoObsoleto(Impedimento)_1>VistoUS_DataCard1_9
+- FrmEditaAcompanhamentoFluxoInspeção_1>Resp.Anexar_DataCard4_2
+- FrmEditaAcompanhamentoFluxoInspeção_1>Anexado_DataCard4_2
+- FrmEditaAcompanhamentoFluxoInspeção_1>Resp.Análise NR13_DataCard1_3
+- FrmEditaAcompanhamentoFluxoInspeção_1>Análise NR-13_DataCard1_3
+- FrmEditaAcompanhamentoFluxoInspeção_1>Resp.Lançamento_DataCard1_3
+- FrmEditaAcompanhamentoFluxoInspeção_1>Lançado_DataCard1_3
+- FrmEditaAcompanhamentoFluxoInspeção_1>Cadastrado_DataCard1_3
+- FrmEditaAcompanhamentoFluxoInspeção_1>Resp.Cadastro_DataCard1_3
+- FrmEditaAcompanhamentoFluxoInspeção_1>Executado_DataCard1_3
+- FrmEditaAcompanhamentoFluxoInspeção_1>Resp.Execução_DataCard1_3
+- FrmEditaAcompanhamentoFluxoInspeção_1>Analisado e assinado_DataCard1_3
+- FrmEditaAcompanhamentoFluxoInspeção_1>Resp.Assinatura_DataCard1_3
+- FrmTornaEventoObsoleto(Iniciar)_1>Notificação Obrigatória_DataCard6_10
+- FrmTornaEventoObsoleto(Iniciar)_1>VistoUP_DataCard1_10
+- FrmTornaEventoObsoleto(Iniciar)_1>VistoUS_DataCard1_10
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)_1>Notificação Obrigatória_DataCard6_8
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)_1>VistoUP_DataCard1_8
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)_1>VistoUS_DataCard1_8
+- PopUpEquipamentosMensagem_3>Image44_7
+- PopUpEquipamentosMensagem_3>Label8_21
+- PopUpEquipamentosMensagem_3>Timer2_8
+- PopUpEquipamentosMensagem_3>FrmMensagem_6
+- PopUpEquipamentosMensagem_3>Image17_21
+- PopUpEquipamentosMensagem_3>Button1_129
+- PopUpEquipamentosMensagem_3>Image14_33
+- PopUpEquipamentosMensagem_3>Button1_168
+- FrmTornaEventoObsoleto(Impedimento)>Notificação Obrigatória_DataCard6_5
+- FrmTornaEventoObsoleto(Impedimento)>VistoUP_DataCard1_5
+- FrmTornaEventoObsoleto(Impedimento)>VistoUS_DataCard1_5
+- FrmEditaAcompanhamentoFluxoInspeção>Resp.Anexar_DataCard4_1
+- FrmEditaAcompanhamentoFluxoInspeção>Anexado_DataCard4_1
+- FrmEditaAcompanhamentoFluxoInspeção>Resp.Análise NR13_DataCard1_2
+- FrmEditaAcompanhamentoFluxoInspeção>Análise NR-13_DataCard1_2
+- FrmEditaAcompanhamentoFluxoInspeção>Resp.Lançamento_DataCard1_2
+- FrmEditaAcompanhamentoFluxoInspeção>Lançado_DataCard1_2
+- FrmEditaAcompanhamentoFluxoInspeção>Cadastrado_DataCard1_2
+- FrmEditaAcompanhamentoFluxoInspeção>Resp.Cadastro_DataCard1_2
+- FrmEditaAcompanhamentoFluxoInspeção>Executado_DataCard1_2
+- FrmEditaAcompanhamentoFluxoInspeção>Resp.Execução_DataCard1_2
+- FrmEditaAcompanhamentoFluxoInspeção>Analisado e assinado_DataCard1_2
+- FrmEditaAcompanhamentoFluxoInspeção>Resp.Assinatura_DataCard1_2
+- FrmTornaEventoObsoleto(Iniciar)>Notificação Obrigatória_DataCard6_7
+- FrmTornaEventoObsoleto(Iniciar)>VistoUP_DataCard1_7
+- FrmTornaEventoObsoleto(Iniciar)>VistoUS_DataCard1_7
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)>Notificação Obrigatória_DataCard6_6
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)>VistoUP_DataCard1_6
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)>VistoUS_DataCard1_6
+- FrmTornaEventoObsoleto(Impedimento)_2>Notificação Obrigatória_DataCard6_13
+- FrmTornaEventoObsoleto(Impedimento)_2>VistoUP_DataCard1_13
+- FrmTornaEventoObsoleto(Impedimento)_2>VistoUS_DataCard1_13
+- FrmEditaAcompanhamentoFluxoInspeção_2>Resp.Anexar_DataCard4_3
+- FrmEditaAcompanhamentoFluxoInspeção_2>Anexado_DataCard4_3
+- FrmEditaAcompanhamentoFluxoInspeção_2>Resp.Análise NR13_DataCard1_4
+- FrmEditaAcompanhamentoFluxoInspeção_2>Análise NR-13_DataCard1_4
+- FrmEditaAcompanhamentoFluxoInspeção_2>Resp.Lançamento_DataCard1_4
+- FrmEditaAcompanhamentoFluxoInspeção_2>Lançado_DataCard1_4
+- FrmEditaAcompanhamentoFluxoInspeção_2>Cadastrado_DataCard1_4
+- FrmEditaAcompanhamentoFluxoInspeção_2>Resp.Cadastro_DataCard1_4
+- FrmEditaAcompanhamentoFluxoInspeção_2>Executado_DataCard1_4
+- FrmEditaAcompanhamentoFluxoInspeção_2>Resp.Execução_DataCard1_4
+- FrmEditaAcompanhamentoFluxoInspeção_2>Analisado e assinado_DataCard1_4
+- FrmEditaAcompanhamentoFluxoInspeção_2>Resp.Assinatura_DataCard1_4
+- FrmTornaEventoObsoleto(Iniciar)_2>Notificação Obrigatória_DataCard6_14
+- FrmTornaEventoObsoleto(Iniciar)_2>VistoUP_DataCard1_14
+- FrmTornaEventoObsoleto(Iniciar)_2>VistoUS_DataCard1_14
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)_2>Notificação Obrigatória_DataCard6_12
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)_2>VistoUP_DataCard1_12
+- FrmTornaEventoObsoleto(ImpedimentoAnulado)_2>VistoUS_DataCard1_12
+- FrmCancelaSubmedidaPlanejamento>Cadastrado_DataCard8
+- FrmCancelaSubmedidaPlanejamento>Resp.Cadastro_DataCard8
+- FrmCancelaSubmedidaPlanejamento>Resp.Lançamento_DataCard8
+- FrmCancelaSubmedidaPlanejamento>Resp.Execução_DataCard8
+- FrmCancelaSubmedidaPlanejamento>Executado_DataCard8
+- FrmCancelaSubmedidaPlanejamento>Lançado_DataCard8
+- FrmCancelaSubmedidaPlanejamento>Análise NR-13_DataCard8
+- FrmCancelaSubmedidaPlanejamento>Resp.Análise NR13_DataCard8
+- FrmCancelaSubmedidaPlanejamento>Analisado e assinado_DataCard7
+- FrmCancelaSubmedidaPlanejamento>Resp.Anexar_DataCard7
+- FrmCancelaSubmedidaPlanejamento>Resp.Assinatura_DataCard7
+- FrmCancelaSubmedidaPlanejamento>Anexado_DataCard7
+- FrmCancelaSubmedidaPlanejamento>Status usuário Medida_DataCard9
+- FrmCancelaSubmedidaPlanejamento>Status sistema Medida_DataCard8
+- FrmEventosPlan>Título_DataCard13
+- FrmEventosPlan>Responsavel_DataCard9
+- FrmEventosPlan>Usuário Designado(principal)_DataCard11
+- FrmEventosPlan>Usuário Designado(secundário)_DataCard12
+- FrmEventosPlan>Medida relacionada (principal)_DataCard6
+- FrmEventosPlan>Descrição_DataCard9
+- FrmEventosPlan>Notificação Obrigatória_DataCard3
+- FrmEventosPlan>Equipamento Envolvido (principal)_DataCard11
+- GlrPopUpplan_2>Title19
+- GlrPopUpplan_2>Subtitle17
+- GlrPopUpplan_2>Body9
+- GlrPopUpplan_2>NextArrow15
+- GlrPopUpplan_2>Separator19
+- GlrPopUpplan_2>Rectangle23
+- FrmVisualizarMedidaNãoPlanejada_3>Tipo1_DataCard3
+- FrmVisualizarMedidaNãoPlanejada_3>Serviço_DataCard3
+- FrmVisualizarMedidaNãoPlanejada_3>Cat_DataCard3
+- FrmVisualizarMedidaNãoPlanejada_3>Texto breve da Medida_DataCard5
+- FrmVisualizarMedidaNãoPlanejada_3>Título da medida_DataCard5
+- FrmVisualizarMedidaNãoPlanejada_3>Data criação (Medida)_DataCard3
+- FrmVisualizarMedidaNãoPlanejada_3>Status sistema Medida_DataCard3
+- FrmVisualizarMedidaNãoPlanejada_3>Status usuário Medida_DataCard3
+- FrmVisualizarMedidaNãoPlanejada_3>Criado por (Medida)_DataCard3
+- FrmVisualizarMedidaNãoPlanejada_3>Check Nova_DataCard2
+- FrmVisualizarMedidaNãoPlanejada_3>Ensaio/Serviço_DataCard3
+- FrmVisualizarMedidaNãoPlanejada_3>Tipo Ensaio_DataCard3
+- FrmVisualizarMedidaNãoPlanejada_3>Data modificação medida_DataCard1
+- FrmVisualizarMedidaNãoPlanejada_3>Impeditivo LV_DataCard2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Equipamento_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Tipo Ensaio_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Nº da Nota_DataCard5_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Nº Medida_DataCard5_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Ensaio/Serviço_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Impeditivo LV_DataCard1_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Texto breve da Medida_DataCard4_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Anexos_DataCard8_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>PLH_DataCard3_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>TIE_DataCard3_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Título da medida_DataCard4_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>TX_EmailPLH_DataCard3_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>EmailTIE_DataCard3_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>IdInsp_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Tipo1_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Data criação (Medida)_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Serviço_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Nº SubMedida_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Cat_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Status usuário Medida_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Nº Parte_DataCard5_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Status sistema Medida_DataCard2_2
+- FrmPlanejamentoNovaSubmedidaFluxoInsp>Criado por (Medida)_DataCard2_2
+- frmFluxoInspeção(Tela passagem serviço)>Resp.Execução_DataCard4
+- frmFluxoInspeção(Tela passagem serviço)>Resp.Cadastro_DataCard3
+- frmFluxoInspeção(Tela passagem serviço)>Cadastrado_DataCard4
+- frmFluxoInspeção(Tela passagem serviço)>Executado_DataCard4
+- frmFluxoInspeção(Tela passagem serviço)>Resp.Lançamento_DataCard4
+- frmFluxoInspeção(Tela passagem serviço)>Lançado_DataCard4
+- frmFluxoInspeção(Tela passagem serviço)>Resp.Análise NR13_DataCard4
+- frmFluxoInspeção(Tela passagem serviço)>Análise NR-13_DataCard4
+- frmFluxoInspeção(Tela passagem serviço)>Resp.Assinatura_DataCard2
+- frmFluxoInspeção(Tela passagem serviço)>Analisado e assinado_DataCard2
+- frmFluxoInspeção(Tela passagem serviço)>Resp.Anexar_DataCard1
+- frmFluxoInspeção(Tela passagem serviço)>Anexado_DataCard1
+- MiniPopUpAnexosFluxoENDs>FrmVerAnexoEtapaEND
+- MiniPopUpAnexosFluxoENDs>Image61_1
+- MiniPopUpAnexosFluxoENDs>Label25_1
+- MiniPopUpAnexosFluxoENDs>Image14_31
+- MiniPopUpAnexosFluxoENDs>Button1_131
+
+### ScreensOrder
+
+**Nível 1**
+- (vazio)
+
+**Nível 2**
+- (vazio)
+
+### TelaInicial 2.0
+
+**Nível 1**
+- Label9
+- Button2_1
+- MenuParadas
+- HeaderPadrão
+- Image43
+- InspflowIdentificador
+- Image47
+- Label15_4
+- Label15_5
+- Button2
+- MenuLab
+- MenuPlanos_1
+- PortaPopups
+
+**Nível 2**
+- MenuParadas>ctnOrganizaBotões
+- MenuParadas>Label16
+- MenuParadas>Image46
+- MenuParadas>btRecolheMenu
+- MenuParadas>TrocaEqpto_13
+- MenuParadas>Container14
+- MenuParadas>Icon2_12
+- MenuParadas>Icon2
+- HeaderPadrão>UserImag_41
+- HeaderPadrão>UserImag_37
+- HeaderPadrão>Lbl_PressurizadorTitulo
+- HeaderPadrão>Lbl_PressurizadorDatas
+- HeaderPadrão>Container37
+- InspflowIdentificador>Label15
+- InspflowIdentificador>Label15_3
+- InspflowIdentificador>Image45_10
+- MenuLab>ctnOrganizaBotões_8
+- MenuLab>Label16_43
+- MenuLab>Image46_22
+- MenuLab>btRecolheMenu_8
+- MenuLab>TrocaEqpto_15
+- MenuLab>Container14_8
+- MenuLab>Icon2_35
+- MenuPlanos_1>ctnOrganizaBotões_13
+- MenuPlanos_1>Label16_2
+- MenuPlanos_1>Image46_10
+- MenuPlanos_1>btRecolheMenu_13
+- MenuPlanos_1>TrocaEqpto_26
+- MenuPlanos_1>Container14_13
+- MenuPlanos_1>Icon2_43
+- PortaPopups>PopUpMensagensNãoLidasLab
+- PortaPopups>PopUpAvisoLab
+- PortaPopups>PopUpMensagemLabTelaInicial
+- PortaPopups>PopUpCadastroUsuário
+- PortaPopups>LoadingAnimation
+- PortaPopups>PopUpConfig_10
+
+### VisãoAdmin
+
+**Nível 1**
+- InspflowIdentificador_9
+- HeaderPadrão_9
+- Image43_9
+- Donfigurações
+- OpçõesAdmin
+- MenuParadas_7
+- PortaPopUpsAdmin
+- Timer2
+
+**Nível 2**
+- InspflowIdentificador_9>Label15_23
+- InspflowIdentificador_9>Label15_24
+- InspflowIdentificador_9>Image45_18
+- HeaderPadrão_9>UserImag_56
+- HeaderPadrão_9>UserImag_57
+- HeaderPadrão_9>Lbl_pressurizador_25
+- HeaderPadrão_9>Lbl_pressurizador_26
+- HeaderPadrão_9>Container36
+- Donfigurações>Image53_6
+- Donfigurações>Image54_6
+- Donfigurações>Button1_289
+- Donfigurações>Image53_7
+- Donfigurações>Image54_7
+- Donfigurações>Button1_290
+- Donfigurações>Image53_8
+- Donfigurações>Image54_8
+- Donfigurações>Button1_291
+- Donfigurações>Image53_9
+- Donfigurações>Image54_9
+- Donfigurações>Button1_292
+- Donfigurações>Image53_10
+- Donfigurações>Image54_10
+- Donfigurações>Button1_293
+- Donfigurações>Rectangle22
+- Donfigurações>Rectangle22_1
+- Donfigurações>Rectangle22_2
+- Donfigurações>Rectangle22_3
+- Donfigurações>Rectangle22_4
+- Donfigurações>Label16_28
+- OpçõesAdmin>GlrDadosLV
+- OpçõesAdmin>GlrParadaseEventos
+- OpçõesAdmin>GlrEditarEquipamento
+- OpçõesAdmin>FrmCadastroEquipamento
+- OpçõesAdmin>FrmCadastraEditaUsuario
+- OpçõesAdmin>GlrEditaUsuario
+- OpçõesAdmin>FrmDadosParada
+- OpçõesAdmin>FrmFasesLV
+- OpçõesAdmin>GlrEtapasInspeção
+- OpçõesAdmin>FrmEtapasInspeção
+- OpçõesAdmin>Container8
+- OpçõesAdmin>Container39
+- MenuParadas_7>ctnOrganizaBotões_7
+- MenuParadas_7>Label16_48
+- MenuParadas_7>Image46_20
+- MenuParadas_7>btRecolheMenu_7
+- MenuParadas_7>TrocaEqpto_23
+- MenuParadas_7>Container14_7
+- MenuParadas_7>Icon2_32
+- MenuParadas_7>Icon2_33
+- PortaPopUpsAdmin>LoadingAnimation_10
+- PortaPopUpsAdmin>PopUpAvisoParada
+- PortaPopUpsAdmin>PopUpTarefasInsp
+- PortaPopUpsAdmin>PopUpTarefasInsp_1
+- PortaPopUpsAdmin>PopUpConfig_8
+
+### VisãoPlanejador2.0
+
+**Nível 1**
+- Controles
+- InspflowIdentificador_6
+- HeaderPadrão_6
+- Image43_6
+- Image46_6
+- GlrVisãoPlanejador
+- cntIdentificaItem
+- PainelComparativo
+- MenuParadas_8
+- PortaPopUpsPlanejador
+
+**Nível 2**
+- Controles>Label20
+- Controles>CbxFiltroTagGrupoFluxoEventos_4
+- Controles>CbxFiltroTagGrupoFluxoEventos_3
+- Controles>Label29
+- InspflowIdentificador_6>Label15_17
+- InspflowIdentificador_6>Label15_18
+- InspflowIdentificador_6>Image45_19
+- HeaderPadrão_6>UserImag_49
+- HeaderPadrão_6>UserImag_50
+- HeaderPadrão_6>Lbl_pressurizador_19
+- HeaderPadrão_6>Lbl_pressurizador_20
+- HeaderPadrão_6>Container36_1
+- GlrVisãoPlanejador>Rectangle16_6
+- GlrVisãoPlanejador>Image50_6
+- GlrVisãoPlanejador>Title15_6
+- GlrVisãoPlanejador>Subtitle7_8
+- GlrVisãoPlanejador>Body6_6
+- GlrVisãoPlanejador>Separator15_6
+- GlrVisãoPlanejador>Image39_3
+- cntIdentificaItem>Label22
+- cntIdentificaItem>Image76
+- cntIdentificaItem>Label22_1
+- cntIdentificaItem>Label22_2
+- cntIdentificaItem>Label22_3
+- cntIdentificaItem>Label22_4
+- PainelComparativo>FrmMarcaPlanejado
+- PainelComparativo>FrmAtualizaMedidaPlan
+- PainelComparativo>Label22_5
+- PainelComparativo>Label22_8
+- PainelComparativo>Image62_1
+- PainelComparativo>Button1_220
+- PainelComparativo>Container3
+- PainelComparativo>Container3_1
+- PainelComparativo>Container40
+- MenuParadas_8>ctnOrganizaBotões_11
+- MenuParadas_8>Label16_63
+- MenuParadas_8>Image46_21
+- MenuParadas_8>btRecolheMenu_11
+- MenuParadas_8>TrocaEqpto_24
+- MenuParadas_8>Container14_11
+- MenuParadas_8>Icon2_38
+- MenuParadas_8>Icon2_39
+- PortaPopUpsPlanejador>LoadingAnimation_11
+- PortaPopUpsPlanejador>PoUPFluxodeInspeção_2
+- PortaPopUpsPlanejador>Timer3
+- PortaPopUpsPlanejador>PopUpConfig_9
+
+## New
+### Home
+
+**Nível 1**
+- Principal
+- DataTable1
+
+**Nível 2**
+- Principal>Cabecalho
+- Principal>Corpo
+- DataTable1>Título_Coluna2
+- DataTable1>URLGINSPEQ_Coluna1
+- DataTable1>Tipo1_Coluna1
+- DataTable1>Servico_Coluna1
+- DataTable1>CAT_Coluna1
+- DataTable1>PLH_Coluna1
+- DataTable1>TIE_Coluna1
+- DataTable1>ResponsavelCadastro_Coluna1
+- DataTable1>ResponsavelExecucao_Coluna1
+- DataTable1>Criado_Coluna1
+- DataTable1>Modificado_Coluna1
+
+### PassagemdeServico
+
+**Nível 1**
+- PrincipalPS
+
+**Nível 2**
+- PrincipalPS>Cabecalho_PS
+- PrincipalPS>Corpo_PS
+
+### ScreensOrder
+
+**Nível 1**
+- (vazio)
+
+**Nível 2**
+- (vazio)
+

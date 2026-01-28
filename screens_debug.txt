@@ -1,0 +1,6 @@
+count=24
+first=C:\Users\GC0P\OneDrive - PETROBRAS\Área de Trabalho\Desktop\InspFlow-pa\New\Src\App.pa.yaml
+firstscreen=Home
+firstfile=C:\Users\GC0P\OneDrive - PETROBRAS\Área de Trabalho\Desktop\InspFlow-pa\New\Src\Home.pa.yaml
+hasOld=20
+hasNew=4
