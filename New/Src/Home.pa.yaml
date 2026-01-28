@@ -1,0 +1,2394 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  Home:
+    Properties:
+      Fill: =RGBA(240, 242, 245, 1)
+      LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+      OnVisible: |-
+        =UpdateContext({ locMenuExpandido: true }) // Ou false, se quiser começar fechado
+    Children:
+      - Principal:
+          Control: GroupContainer@1.4.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =16
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - Cabecalho:
+                Control: GroupContainer@1.4.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(0, 133, 66, 1)
+                  FillPortions: =0
+                  Height: =75
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =20
+                  LayoutMinHeight: =16
+                  LayoutMinWidth: =16
+                  PaddingBottom: =8
+                  PaddingLeft: =20
+                  PaddingRight: =20
+                  PaddingTop: =8
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                Children:
+                  - Nome_Versão:
+                      Control: GroupContainer@1.4.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =75
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =8
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =8
+                        Width: =130
+                      Children:
+                        - InspFlow:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisplayMode: =DisplayMode.View
+                              FillPortions: =1
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Bold
+                              LayoutMaxHeight: =35
+                              LayoutMinHeight: =35
+                              LayoutMinWidth: =16
+                              LineHeight: =0
+                              OnSelect: |-
+                                =Navigate(
+                                    Home,ScreenTransition.Fade
+                                );
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =20
+                              Text: ="InspFlow"
+                        - Versao:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(200, 200, 200, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FillPortions: =1
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Bold
+                              LayoutMaxHeight: =16
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              LineHeight: =0
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =8
+                              Text: ="V1.0 - 02/12/2025"
+                  - BarraDash_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =6
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        Fill: =RGBA(245, 245, 245, 1)
+                        Font: =Font.'Segoe UI'
+                        Height: =Parent.Height
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        Text: =""
+                        Width: =6
+                        X: =40
+                        Y: =40
+                  - Parada:
+                      Control: GroupContainer@1.4.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        Height: =75
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =8
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =8
+                      Children:
+                        - Unidade:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              DisplayMode: =DisplayMode.View
+                              FillPortions: =1
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Bold
+                              LayoutMaxHeight: =35
+                              LayoutMinHeight: =35
+                              LayoutMinWidth: =16
+                              LineHeight: =0
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =20
+                              Text: |-
+                                ="PARADA HDT: U-210"
+                              Width: =400
+                              X: =40
+                              Y: =40
+                        - Datas_Parada:
+                            Control: Label@2.5.1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(200, 200, 200, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FillPortions: =1
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Bold
+                              LayoutMaxHeight: =16
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              LineHeight: =0
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =8
+                              Text: ="Faltam 4 dias para o término da parada."
+                              Width: =400
+                  - Pesquisa_GeralHeader:
+                      Control: Classic/TextInput@2.3.2
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Color: =RGBA(50, 49, 48, 1)
+                        Default: =""
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        DisabledFill: =RGBA(242, 242, 241, 0)
+                        FillPortions: =1
+                        Font: =Font.'Segoe UI'
+                        HintText: ="Buscar por Equipamento"
+                        HoverBorderColor: =RGBA(16, 110, 190, 1)
+                        HoverColor: =RGBA(50, 49, 48, 1)
+                        HoverFill: =RGBA(255, 255, 255, 1)
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PressedBorderColor: =RGBA(0, 120, 212, 1)
+                        PressedColor: =RGBA(50, 49, 48, 1)
+                        PressedFill: =RGBA(255, 255, 255, 1)
+                        RadiusBottomLeft: =20
+                        RadiusBottomRight: =20
+                        RadiusTopLeft: =20
+                        RadiusTopRight: =20
+                  - InfoUsuario:
+                      Control: GroupContainer@1.4.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =50
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.End
+                        LayoutMaxWidth: =200
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =150
+                        PaddingBottom: =4
+                        PaddingLeft: =4
+                        PaddingRight: =4
+                        PaddingTop: =4
+                        Width: =150
+                      Children:
+                        - Nome:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Right
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(255, 255, 255, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FillPortions: =1
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Bold
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =12
+                              Text: =User().FullName
+                        - Perfil:
+                            Control: Label@2.5.1
+                            Properties:
+                              Align: =Align.Right
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              BorderStyle: =BorderStyle.None
+                              BorderThickness: =2
+                              Color: =RGBA(200, 200, 200, 1)
+                              DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                              DisabledColor: =RGBA(161, 159, 157, 1)
+                              FillPortions: =1
+                              FocusedBorderThickness: =4
+                              Font: =Font.'Segoe UI'
+                              FontWeight: =FontWeight.Bold
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              PaddingBottom: =0
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              PaddingTop: =0
+                              Size: =8
+                              Text: ="Desenvolvedor"
+                  - Usuario:
+                      Control: Image@2.2.3
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        DisplayMode: =DisplayMode.View
+                        FillPortions: =1
+                        FocusedBorderThickness: =4
+                        Height: =55
+                        HoverBorderColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =RGBA(0, 0, 0, 0)
+                        Image: =User().Image
+                        LayoutMaxHeight: =55
+                        LayoutMaxWidth: =55
+                        LayoutMinHeight: =55
+                        LayoutMinWidth: =55
+                        PressedBorderColor: =RGBA(0, 0, 0, 0)
+                        PressedFill: =RGBA(0, 0, 0, 0)
+                        RadiusBottomLeft: =55
+                        RadiusBottomRight: =55
+                        RadiusTopLeft: =55
+                        RadiusTopRight: =55
+                        Width: =55
+            - Corpo:
+                Control: GroupContainer@1.4.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(245, 245, 245, 1)
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =16
+                  LayoutMinHeight: =16
+                  LayoutMinWidth: =16
+                  LayoutWrap: =true
+                  PaddingBottom: =2
+                  PaddingLeft: =2
+                  PaddingRight: =2
+                  PaddingTop: =2
+                Children:
+                  - MLateral:
+                      Control: GroupContainer@1.4.0
+                      Variant: AutoLayout
+                      Properties:
+                        Fill: =RGBA(35, 45, 55, 1)
+                        FillPortions: =0
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =4
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        LayoutWrap: |+
+                          =false
+                        PaddingBottom: |+
+                          =8
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =8
+                        RadiusBottomLeft: =8
+                        RadiusBottomRight: =8
+                        RadiusTopLeft: =8
+                        RadiusTopRight: =8
+                        Width: =If(varMenuExpandido, 300, 70)
+                      Children:
+                        - RetrairMenu:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_Menu:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Retrair Menu"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - IconeMenu:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8," & EncodeUrl(
+                                          "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M4.25 4A2.25 2.25 0 0 0 2 6.25v2.5A2.25 2.25 0 0 0 4.25 11h2.5A2.25 2.25 0 0 0 9 8.75v-2.5A2.25 2.25 0 0 0 6.75 4h-2.5ZM3.5 6.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1-.75-.75v-2.5ZM11.25 5a.75.75 0 0 0 0 1.5h10a.75.75 0 0 0 0-1.5h-10Zm0 3a.75.75 0 0 0 0 1.5h7a.75.75 0 0 0 0-1.5h-7Zm-7 5A2.25 2.25 0 0 0 2 15.25v2.5A2.25 2.25 0 0 0 4.25 20h2.5A2.25 2.25 0 0 0 9 17.75v-2.5A2.25 2.25 0 0 0 6.75 13h-2.5Zm-.75 2.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1-.75-.75v-2.5ZM11.25 14a.75.75 0 0 0 0 1.5h10a.75.75 0 0 0 0-1.5h-10Zm0 3a.75.75 0 0 0 0 1.5h7a.75.75 0 0 0 0-1.5h-7Z' fill='white'/></svg>"
+                                      )
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_RMenu:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: =Set(varMenuExpandido, !varMenuExpandido)
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraMenu:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                        - DashBoard:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_DashBoard:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Dashboard"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - IconeDashBoard:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: ="data:image/svg+xml;utf8," & EncodeUrl("<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M11.5 2.5H3V8H11.5V2.5ZM13 2.5H21.5V13.5H13V2.5ZM21.5 15H13V21.5H21.5V15ZM11.5 9.5H3V21.5H11.5V9.5Z' fill='white'/></svg>")
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_DashBoard:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: =Navigate(Home,ScreenTransition.Fade)
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraDashBoard:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                        - PassagemServico:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_PS:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Passagem de Serviço"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - IconePS:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8," & EncodeUrl(
+                                          "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                                              <path d='M9 5.5a3.5 3.5 0 0 1-3 3.465V15a3 3 0 0 0 3 3h2.69l-.97-.97a.75.75 0 1 1 1.06-1.06l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 1 1-1.06-1.06l.97-.97H9A4.5 4.5 0 0 1 4.5 15V8.855A3.502 3.502 0 0 1 5.5 2 3.5 3.5 0 0 1 9 5.5Zm13 13a3.5 3.5 0 1 1-4-3.465V9a3 3 0 0 0-3-3h-1.94l.97.97a.75.75 0 0 1-1.06 1.06l-2.25-2.25a.75.75 0 0 1 0-1.06l2.25-2.25a.75.75 0 1 1 1.06 1.06l-.97.97H15A4.5 4.5 0 0 1 19.5 9v6.145c1.446.43 2.5 1.77 2.5 3.355Z' 
+                                              fill='white'/>
+                                          </svg>"
+                                      )
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_PS:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: =Navigate(PassagemdeServico,ScreenTransition.Fade)
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraPS:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                        - Inspecao:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_Insp:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Inspeção"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - IconeInsp:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8," & EncodeUrl(
+                                          "<svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                              <path d='M16.2552 15.2036C17.3486 13.8344 18 12.1065 18 10.25C18 5.96979 14.5302 2.5 10.25 2.5C5.96979 2.5 2.5 5.96979 2.5 10.25C2.5 14.5302 5.96979 18 10.25 18C12.0913 18 13.8062 17.3618 15.1706 16.2878L19.4589 20.6033C19.7501 20.8964 20.224 20.8981 20.5172 20.6069C20.8103 20.3157 20.812 19.8418 20.5208 19.5486L16.2552 15.2036ZM16.5 10.25C16.5 13.7018 13.7018 16.5 10.25 16.5C6.79822 16.5 4 13.7018 4 10.25C4 6.79822 6.79822 4 10.25 4C13.7018 4 16.5 6.79822 16.5 10.25Z' 
+                                              fill='white'/>
+                                          </svg>"
+                                      )
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_Insp:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraInsp:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                        - Manutencao:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_Manut:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Manutenção"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - IconeManut:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8," & EncodeUrl(
+                                          "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                                              <path d='M16.75 2.001a5.25 5.25 0 0 0-5.005 6.84l-9.068 9.38a2.344 2.344 0 1 0 3.37 3.257l8.963-9.272A5.25 5.25 0 0 0 21.797 5.8a.75.75 0 0 0-1.25-.323L17.36 8.66l-2.06-2.06 3.16-3.162a.75.75 0 0 0-.333-1.254 5.255 5.255 0 0 0-1.378-.183Z' 
+                                              fill='white'/>
+                                          </svg>"
+                                      )
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_Manut:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraManut:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                        - Equipamentos:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_Equipamentos:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Equipamentos"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - Icone_Eqps:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8," & EncodeUrl(
+                                          "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                                              <path d='M19.75 2A2.25 2.25 0 0 1 22 4.25v5.462a3.25 3.25 0 0 1-.952 2.298l-8.5 8.503a3.255 3.255 0 0 1-4.597.001L3.489 16.06a3.25 3.25 0 0 1-.003-4.596l8.5-8.51A3.25 3.25 0 0 1 14.284 2h5.465ZM17 5.502a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z' 
+                                              fill='white'/>
+                                          </svg>"
+                                      )
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_Eqps:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraEqps:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                        - Equipe:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_Equipe:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Equipe"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - Icone_Equipe:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8," & EncodeUrl(
+                                          "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                                              <path d='M14.754 10c.966 0 1.75.784 1.75 1.75v4.749a4.501 4.501 0 0 1-9.002 0V11.75c0-.966.783-1.75 1.75-1.75h5.502Zm-7.623 0c-.35.422-.575.95-.62 1.53l-.01.22v4.749c0 .847.192 1.649.534 2.365A4.001 4.001 0 0 1 2 14.999V11.75a1.75 1.75 0 0 1 1.606-1.744L3.75 10h3.381Zm9.744 0h3.375c.966 0 1.75.784 1.75 1.75V15a4 4 0 0 1-5.03 3.866c.3-.628.484-1.32.525-2.052l.009-.315V11.75c0-.665-.236-1.275-.63-1.75ZM12 3a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm6.5 1a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm-13 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z' 
+                                              fill='white'/>
+                                          </svg>"
+                                      )
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_Equipe:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraEquipe:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                        - Configurações:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_Config:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Configurações"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - Icone_Config:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8," & EncodeUrl(
+                                          "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                                              <path d='M8.75 13.5a3.251 3.251 0 0 1 3.163 2.5h9.337a.75.75 0 0 1 .102 1.493l-.102.007h-9.337a3.251 3.251 0 0 1-6.326 0H2.75a.75.75 0 0 1-.102-1.493L2.75 16h2.837a3.251 3.251 0 0 1 3.163-2.5Zm6.5-9.5a3.251 3.251 0 0 1 3.163 2.5h2.837a.75.75 0 0 1 .102 1.493L21.25 8h-2.837a3.251 3.251 0 0 1-6.326 0H2.75a.75.75 0 0 1-.102-1.493L2.75 6.5h9.337A3.251 3.251 0 0 1 15.25 4Z' 
+                                              fill='white'/>
+                                          </svg>"
+                                      )
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_Config:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraConfig:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                        - Planejador:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_Plan:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Planejador"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - Icone_Plan:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8," & EncodeUrl(
+                                          "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                                              <path d='M5.25 3A3.25 3.25 0 0 0 2 6.25v6.007a5.477 5.477 0 0 1 2.5-1.166V8.75A3.25 3.25 0 0 1 7.75 5.5H19v-.25A2.25 2.25 0 0 0 16.75 3H5.25Zm14.5 17.5h-7.775l-1.55-1.55A5.5 5.5 0 0 0 5.5 11V8.75A2.25 2.25 0 0 1 7.75 6.5h12A2.25 2.25 0 0 1 22 8.75v9.5a2.25 2.25 0 0 1-2.25 2.25Zm-11.643-.332a4.5 4.5 0 1 1 1.06-1.06l2.613 2.612a.75.75 0 1 1-1.06 1.06l-2.613-2.612ZM2.5 16.5a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z'
+                                              fill='white'/>
+                                          </svg>"
+                                      )
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_Plan:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraPlan:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                        - PBI:
+                            Control: GroupContainer@1.4.0
+                            Variant: ManualLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(240, 242, 245, 0.2)
+                              LayoutMaxHeight: =56
+                              LayoutMinHeight: =56
+                              LayoutMinWidth: =16
+                              RadiusBottomLeft: =8
+                              RadiusBottomRight: =8
+                              RadiusTopLeft: =8
+                              RadiusTopRight: =8
+                              Width: =If(varMenuExpandido, 285, 55)
+                            Children:
+                              - Titulo_PBI:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =Parent.Height
+                                    OnSelect: |-
+                                      =Navigate(
+                                          Home,ScreenTransition.Fade
+                                      );
+                                    PaddingLeft: =4
+                                    PressedFill: =
+                                    Size: =16
+                                    Text: ="Painel PBI"
+                                    Visible: =locMenuExpandido
+                                    Width: =235
+                                    X: =50
+                              - Icone_PBI:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledFill: =RGBA(0, 0, 0, 0)
+                                    FocusedBorderThickness: =4
+                                    Height: =45
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverFill: =RGBA(0, 0, 0, 0)
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8," & EncodeUrl(
+                                          "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                                              <path d='M9 5.23a2.25 2.25 0 0 1 2.25-2.25h1.5A2.25 2.25 0 0 1 15 5.23V21H9V5.23ZM7.5 10H5.25A2.25 2.25 0 0 0 3 12.25v8c0 .415.336.75.75.75H7.5V10ZM16.5 21h3.75a.75.75 0 0 0 .75-.75v-11A2.25 2.25 0 0 0 18.75 7H16.5v14Z'
+                                              fill='white'/>
+                                          </svg>"
+                                      )
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PaddingLeft: =4
+                                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                    PressedFill: =
+                                    Width: =45
+                                    X: =5
+                                    Y: =(Parent.Height - Self.Height) /2
+                              - Bnt_PBI:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    DisabledFill: =RGBA(242, 242, 241, 0)
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                    HoverColor: =RGBA(255, 255, 255, 1)
+                                    HoverFill: =RGBA(255, 255, 255, 0.3)
+                                    OnSelect: |-
+                                      =UpdateContext({ locMenuExpandido: !locMenuExpandido })
+                                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(255, 255, 255, 0.4)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Text: =""
+                                    Width: =Parent.Width
+                              - BarraPBI:
+                                  Control: Label@2.5.1
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    BorderThickness: =2
+                                    Color: =RGBA(50, 49, 48, 1)
+                                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                    DisabledColor: =RGBA(161, 159, 157, 1)
+                                    Fill: =RGBA(0, 133, 66, 1)
+                                    FocusedBorderThickness: =4
+                                    Font: =Font.'Segoe UI'
+                                    Height: =Parent.Height
+                                    PressedFill: =
+                                    Text: =""
+                                    Width: =6
+                  - Conteudo:
+                      Control: GroupContainer@1.4.0
+                      Variant: AutoLayout
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =7
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =15
+                        LayoutMinHeight: =16
+                        LayoutMinWidth: =16
+                        PaddingBottom: =8
+                        PaddingLeft: =8
+                        PaddingRight: =8
+                        PaddingTop: =8
+                        RadiusBottomLeft: =8
+                        RadiusBottomRight: =8
+                        RadiusTopLeft: =8
+                        RadiusTopRight: =8
+                      Children:
+                        - Grupo_KPIs:
+                            Control: GroupContainer@1.4.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =160
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =15
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              PaddingBottom: =8
+                              PaddingLeft: =8
+                              PaddingRight: =8
+                              PaddingTop: =8
+                            Children:
+                              - KPI_Vencidas:
+                                  Control: GroupContainer@1.4.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.Regular
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    Height: =160
+                                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                    LayoutMaxHeight: =160
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    LayoutOverflowX: =LayoutOverflow.Scroll
+                                    PaddingBottom: =8
+                                    PaddingLeft: =8
+                                    PaddingRight: =8
+                                    PaddingTop: =8
+                                    RadiusBottomLeft: =15
+                                    RadiusBottomRight: =15
+                                    RadiusTopLeft: =15
+                                    RadiusTopRight: =15
+                                  Children:
+                                    - Strip_Vencidas:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(255, 255, 255, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          Fill: =RGBA(220, 53, 69, 1)
+                                          FillPortions: =1
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =Parent.Height
+                                          LayoutMaxWidth: =6
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =6
+                                          PaddingLeft: =4
+                                          Size: =16
+                                          Text: =""
+                                    - Info_Vencidas:
+                                        Control: GroupContainer@1.4.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Center
+                                          DropShadow: =DropShadow.None
+                                          Height: =140
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          PaddingBottom: =8
+                                          PaddingLeft: =8
+                                          PaddingRight: =8
+                                          PaddingTop: =8
+                                        Children:
+                                          - Desc_Vencidas:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(179, 179, 179, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =12
+                                                Text: ="Inspeções Vencidas"
+                                                Width: =180
+                                          - Qnt_Vencidas:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(220, 53, 69, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Bold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =42
+                                                Text: ="12"
+                                          - Subt_Vencidas:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(179, 179, 179, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMaxHeight: =25
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =10
+                                                Text: ="Risco Crítico"
+                              - KPI_Anomalias:
+                                  Control: GroupContainer@1.4.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.Regular
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    Height: =160
+                                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMaxHeight: =160
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    PaddingBottom: =8
+                                    PaddingLeft: =8
+                                    PaddingRight: =8
+                                    PaddingTop: =8
+                                    RadiusBottomLeft: =15
+                                    RadiusBottomRight: =15
+                                    RadiusTopLeft: =15
+                                    RadiusTopRight: =15
+                                  Children:
+                                    - Strip_Anomalias:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(255, 255, 255, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          Fill: =RGBA(255, 193, 7, 1)
+                                          FillPortions: =1
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =Parent.Height
+                                          LayoutMaxWidth: =6
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =6
+                                          PaddingLeft: =4
+                                          Size: =16
+                                          Text: =""
+                                    - Info_Anomalias:
+                                        Control: GroupContainer@1.4.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Center
+                                          DropShadow: =DropShadow.None
+                                          Height: =140
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          PaddingBottom: =8
+                                          PaddingLeft: =8
+                                          PaddingRight: =8
+                                          PaddingTop: =8
+                                        Children:
+                                          - Desc_Anomalias:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(179, 179, 179, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =12
+                                                Text: ="Anomalias"
+                                          - Qnt_Anomalias:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(255, 193, 7, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Bold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =42
+                                                Text: ="5"
+                                          - Subt_Anomalias:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(179, 179, 179, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMaxHeight: =25
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =10
+                                                Text: ="Aguardando Manutenção"
+                                                Width: =200
+                              - KPI_Execucao:
+                                  Control: GroupContainer@1.4.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.Regular
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    Height: =160
+                                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMaxHeight: =160
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    PaddingBottom: =8
+                                    PaddingLeft: =8
+                                    PaddingRight: =8
+                                    PaddingTop: =8
+                                    RadiusBottomLeft: =15
+                                    RadiusBottomRight: =15
+                                    RadiusTopLeft: =15
+                                    RadiusTopRight: =15
+                                  Children:
+                                    - Strip_Execucao:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(255, 255, 255, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          Fill: =RGBA(13, 110, 253, 1)
+                                          FillPortions: =1
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =Parent.Height
+                                          LayoutMaxWidth: =6
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =6
+                                          PaddingLeft: =4
+                                          Size: =16
+                                          Text: =""
+                                    - Info_Execucao:
+                                        Control: GroupContainer@1.4.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Center
+                                          DropShadow: =DropShadow.None
+                                          Height: =140
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          PaddingBottom: =8
+                                          PaddingLeft: =8
+                                          PaddingRight: =8
+                                          PaddingTop: =8
+                                        Children:
+                                          - Desc_Execucao:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(179, 179, 179, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =12
+                                                Text: ="Em Execução"
+                                          - Qnt_Execucao:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(13, 110, 253, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Bold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =42
+                                                Text: ="1"
+                                          - Subt_Execucao:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(179, 179, 179, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMaxHeight: =25
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =10
+                                                Text: ="Técnicos em Campo"
+                              - KPI_Laudos:
+                                  Control: GroupContainer@1.4.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.Regular
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    Height: =160
+                                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                    LayoutMaxHeight: =160
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    PaddingBottom: =8
+                                    PaddingLeft: =8
+                                    PaddingRight: =8
+                                    PaddingTop: =8
+                                    RadiusBottomLeft: =15
+                                    RadiusBottomRight: =15
+                                    RadiusTopLeft: =15
+                                    RadiusTopRight: =15
+                                  Children:
+                                    - Strip_Laudos:
+                                        Control: Label@2.5.1
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderStyle: =BorderStyle.None
+                                          BorderThickness: =2
+                                          Color: =RGBA(255, 255, 255, 1)
+                                          DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                          DisabledColor: =RGBA(161, 159, 157, 1)
+                                          Fill: =RGBA(0, 133, 66, 1)
+                                          FillPortions: =1
+                                          FocusedBorderThickness: =4
+                                          Font: =Font.'Segoe UI'
+                                          FontWeight: =FontWeight.Bold
+                                          Height: =Parent.Height
+                                          LayoutMaxWidth: =6
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =6
+                                          PaddingLeft: =4
+                                          Size: =16
+                                          Text: =""
+                                    - Info_Laudos:
+                                        Control: GroupContainer@1.4.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Center
+                                          DropShadow: =DropShadow.None
+                                          Height: =140
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          PaddingBottom: =8
+                                          PaddingLeft: =8
+                                          PaddingRight: =8
+                                          PaddingTop: =8
+                                        Children:
+                                          - Desc_Laudos:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(179, 179, 179, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =12
+                                                Text: ="Laudos Emitidos"
+                                          - Qnt_Laudos:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(0, 133, 66, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Bold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =42
+                                                Text: ="45"
+                                          - Subt_Laudos:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(179, 179, 179, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMaxHeight: =25
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =10
+                                                Text: ="Equipamentos Liberados"
+                                                Width: =200
+                        - Todos_Equipamentos:
+                            Control: GroupContainer@1.4.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =10
+                              LayoutMinHeight: =16
+                              LayoutMinWidth: =16
+                              PaddingBottom: =8
+                              PaddingLeft: =8
+                              PaddingRight: =8
+                              PaddingTop: =8
+                            Children:
+                              - Eqps:
+                                  Control: GroupContainer@1.4.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderStyle: =BorderStyle.None
+                                    FillPortions: =2
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutMinHeight: =16
+                                    LayoutMinWidth: =16
+                                    PaddingBottom: =20
+                                    PaddingLeft: =20
+                                    PaddingRight: =20
+                                    PaddingTop: =20
+                                    RadiusBottomLeft: =15
+                                    RadiusBottomRight: =15
+                                    RadiusTopLeft: =15
+                                    RadiusTopRight: =15
+                                  Children:
+                                    - Cabecalho_Eqps:
+                                        Control: GroupContainer@1.4.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          Fill: =Color.Transparent
+                                          FillPortions: =0
+                                          Height: =40
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutGap: =10
+                                          LayoutMinHeight: =16
+                                          LayoutMinWidth: =16
+                                          PaddingBottom: =8
+                                          PaddingRight: =8
+                                          PaddingTop: =8
+                                          Visible: =false
+                                          Width: =Parent.Width
+                                          X: =40
+                                          Y: =40
+                                        Children:
+                                          - IconeEqps:
+                                              Control: Image@2.2.3
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledFill: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Height: =40
+                                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                                HoverFill: =RGBA(0, 0, 0, 0)
+                                                Image: |-
+                                                  ="data:image/svg+xml;utf8," & EncodeUrl(
+                                                      "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                                                          <path d='M16.75 2.001a5.25 5.25 0 0 0-5.005 6.84l-9.068 9.38a2.344 2.344 0 1 0 3.37 3.257l8.963-9.272A5.25 5.25 0 0 0 21.797 5.8a.75.75 0 0 0-1.25-.323L17.36 8.66l-2.06-2.06 3.16-3.162a.75.75 0 0 0-.333-1.254 5.255 5.255 0 0 0-1.378-.183Z' 
+                                                          fill='#444'/>
+                                                      </svg>"
+                                                  )
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                                PressedFill: =RGBA(0, 0, 0, 0)
+                                                Width: =40
+                                                X: =40
+                                                Y: =40
+                                          - Titulo_Eqps:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderStyle: =BorderStyle.None
+                                                BorderThickness: =2
+                                                Color: =RGBA(60, 60, 60, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                FillPortions: =1
+                                                FocusedBorderThickness: =4
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =FontWeight.Semibold
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingLeft: =4
+                                                Size: =14
+                                                Text: ="Equipamentos"
+                                                X: =40
+                                                Y: =40
+                                          - FiltroArredondado:
+                                              Control: GroupContainer@1.4.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.SetByContainer
+                                                BorderColor: =RGBA(68, 68, 68, 1)
+                                                BorderThickness: =1
+                                                DropShadow: =DropShadow.None
+                                                FillPortions: =0
+                                                Height: =30
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutJustifyContent: =LayoutJustifyContent.End
+                                                LayoutMinHeight: =16
+                                                LayoutMinWidth: =16
+                                                PaddingBottom: =8
+                                                PaddingLeft: =8
+                                                PaddingRight: =8
+                                                PaddingTop: =8
+                                                RadiusBottomLeft: =20
+                                                RadiusBottomRight: =20
+                                                RadiusTopLeft: =20
+                                                RadiusTopRight: =20
+                                                Width: =300
+                                              Children:
+                                                - Pesquisa_Eqps:
+                                                    Control: Classic/ComboBox@2.4.0
+                                                    Properties:
+                                                      BorderColor: =RGBA(0, 0, 0, 0)
+                                                      BorderStyle: =BorderStyle.None
+                                                      BorderThickness: =0
+                                                      ChevronBackground: =RGBA(0, 0, 0, 0)
+                                                      ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+                                                      ChevronDisabledFill: =RGBA(161, 159, 157, 1)
+                                                      ChevronFill: =RGBA(50, 49, 48, 1)
+                                                      ChevronHoverBackground: =RGBA(245, 245, 245, 1)
+                                                      ChevronHoverFill: =RGBA(50, 49, 48, 1)
+                                                      Color: =RGBA(50, 49, 48, 1)
+                                                      DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                      DisabledColor: =RGBA(161, 159, 157, 1)
+                                                      DisabledFill: =RGBA(242, 242, 241, 0)
+                                                      DisplayFields: =["Title","Servico"]
+                                                      Fill: =RGBA(0, 0, 0, 0)
+                                                      FillPortions: =1
+                                                      Font: =Font.'Segoe UI'
+                                                      Height: =Parent.Height
+                                                      HoverBorderColor: =RGBA(16, 110, 190, 1)
+                                                      HoverColor: =RGBA(50, 49, 48, 1)
+                                                      HoverFill: =RGBA(245, 245, 245, 1)
+                                                      InputTextPlaceholder: ="Localizar EQPS"
+                                                      IsSearchable: =false
+                                                      Items: =Sort('PARADA U-0221_Equipamentos', Title, SortOrder.Ascending)
+                                                      LayoutMaxWidth: =250
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PressedBorderColor: =RGBA(16, 110, 190, 1)
+                                                      PressedColor: =RGBA(255, 255, 255, 1)
+                                                      PressedFill: =RGBA(0, 120, 212, 1)
+                                                      SearchFields: =["CAT"]
+                                                      SelectionColor: =RGBA(255, 255, 255, 1)
+                                                      SelectionFill: =RGBA(0, 120, 212, 1)
+                                                      Tooltip: ="Localizar EQPS"
+                                                      Width: =Parent.Width -10
+                                                - IconeFiltro:
+                                                    Control: Image@2.2.3
+                                                    Properties:
+                                                      BorderColor: =RGBA(0, 0, 0, 0)
+                                                      BorderStyle: =BorderStyle.None
+                                                      BorderThickness: =2
+                                                      DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                      DisabledFill: =RGBA(0, 0, 0, 0)
+                                                      FocusedBorderThickness: =4
+                                                      Height: =25
+                                                      HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                                      HoverFill: =RGBA(0, 0, 0, 0)
+                                                      Image: |-
+                                                        ="data:image/svg+xml;utf8," & EncodeUrl(
+                                                            "<svg width='24' height='24' fill='none' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M10 16h4a1 1 0 0 1 .117 1.993L14 18h-4a1 1 0 0 1-.117-1.993L10 16h4-4Zm-2-5h8a1 1 0 0 1 .117 1.993L16 13H8a1 1 0 0 1-.117-1.993L8 11h8-8ZM5 6h14a1 1 0 0 1 .117 1.993L19 8H5a1 1 0 0 1-.117-1.993L5 6h14H5Z' fill='#444'/></svg>"
+                                                        )
+                                                      LayoutMinHeight: =16
+                                                      LayoutMinWidth: =16
+                                                      PaddingLeft: =4
+                                                      PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                                      PressedFill: =RGBA(0, 0, 0, 0)
+                                                      Width: =25
+                                    - Galeria_Eqps:
+                                        Control: Gallery@2.15.0
+                                        Variant: BrowseLayout_Vertical_ThreeTextVariant_ver5.0
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.SetByContainer
+                                          BorderColor: =RGBA(245, 245, 245, 1)
+                                          BorderStyle: =BorderStyle.None
+                                          Items: |-
+                                            =Search(Filter('PARADA U-0221_Equipamentos',
+                                            // Se nada estiver selecionado no Combo Box, mostra tudo
+                                            IsEmpty(Pesquisa_Eqps.SelectedItems)||
+                                            // 2. Se houver seleção, verifica se o Título do item está na lista de selecionados
+
+                                            // O ForAll cria uma lista simples de textos apenas com a coluna Title
+                                            Title in ForAll(Pesquisa_Eqps.SelectedItems,Title).Value),
+                                                // 3. Texto da barra de busca
+                                            Pesquisa_GeralHeader.Text,
+                                                // 4. Coluna onde buscar o texto (Removemos 'Servico' para evitar erros por enquanto)
+                                            Title)
+                                          LayoutMaxHeight: =
+                                          LayoutMaxWidth: =
+                                          Visible: =false
+                                          Width: =Parent.Width
+                                        Children:
+                                          - Title3:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 1)
+                                                Color: =RGBA(50, 49, 48, 1)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                                Height: =Self.Size * 1.8
+                                                OnSelect: =Select(Parent)
+                                                PaddingBottom: =0
+                                                PaddingLeft: =12
+                                                PaddingRight: =0
+                                                PaddingTop: =0
+                                                Size: =14
+                                                Text: =ThisItem.Nome
+                                                VerticalAlign: =VerticalAlign.Top
+                                                Width: =Parent.TemplateWidth - 86
+                                                X: =16
+                                                Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle3.Size*1.8 + 2 + Body3.Size*1.8)) / 2
+                                          - Subtitle3:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 1)
+                                                Color: =RGBA(96, 94, 92, 1)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                                Height: =Self.Size * 1.8
+                                                OnSelect: =Select(Parent)
+                                                PaddingBottom: =0
+                                                PaddingLeft: =12
+                                                PaddingRight: =0
+                                                PaddingTop: =0
+                                                Size: =12
+                                                Text: =ThisItem.Servico
+                                                VerticalAlign: =VerticalAlign.Top
+                                                Width: =Title3.Width
+                                                X: =Title3.X
+                                                Y: =Title3.Y + Title3.Height
+                                          - Body3:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 1)
+                                                Color: =RGBA(96, 94, 92, 1)
+                                                DisabledColor: =RGBA(161, 159, 157, 1)
+                                                Font: =Font.'Segoe UI'
+                                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                                Height: =Self.Size * 1.8
+                                                OnSelect: =Select(Parent)
+                                                PaddingBottom: =0
+                                                PaddingLeft: =12
+                                                PaddingRight: =0
+                                                PaddingTop: =0
+                                                Size: =12
+                                                Text: =ThisItem.URLGINSPEQ
+                                                VerticalAlign: =VerticalAlign.Top
+                                                Width: =Title3.Width
+                                                X: =Title3.X
+                                                Y: =Subtitle3.Y + Subtitle3.Height
+                                          - NextArrow3:
+                                              Control: Classic/Icon@2.5.0
+                                              Properties:
+                                                AccessibleLabel: =Self.Tooltip
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                Color: =RGBA(166, 166, 166, 1)
+                                                DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                                                DisabledColor: =RGBA(225, 223, 221, 1)
+                                                DisabledFill: =RGBA(0, 0, 0, 0)
+                                                FocusedBorderThickness: =4
+                                                Height: =50
+                                                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                                                HoverColor: =RGBA(16, 110, 190, 1)
+                                                HoverFill: =RGBA(0, 0, 0, 0)
+                                                Icon: =Icon.ChevronRight
+                                                OnSelect: =Select(Parent)
+                                                PaddingBottom: =16
+                                                PaddingLeft: =16
+                                                PaddingRight: =16
+                                                PaddingTop: =16
+                                                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                                                PressedColor: =RGBA(16, 110, 190, 1)
+                                                PressedFill: =RGBA(0, 0, 0, 0)
+                                                Tooltip: ="Exibir detalhes do item"
+                                                Width: =50
+                                                X: =Parent.TemplateWidth - Self.Width - 12
+                                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                          - Separator3:
+                                              Control: Rectangle@2.3.0
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                Fill: =RGBA(255, 255, 255, 1)
+                                                Height: =8
+                                                OnSelect: =Select(Parent)
+                                                Width: =Parent.TemplateWidth
+                                                Y: =Parent.TemplateHeight - Self.Height
+                                          - Rectangle3:
+                                              Control: Rectangle@2.3.0
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                Fill: =RGBA(0, 120, 212, 1)
+                                                Height: =Parent.TemplateHeight - Separator3.Height
+                                                OnSelect: =Select(Parent)
+                                                Visible: =ThisItem.IsSelected
+                                                Width: =4
+      - DataTable1:
+          Control: DataTable@1.0.3
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(50, 49, 48, 1)
+            Font: =Font.'Segoe UI'
+            HeadingColor: =RGBA(255, 255, 255, 1)
+            HeadingFill: =RGBA(54, 176, 75, 1)
+            HeadingFont: =Font.'Segoe UI'
+            Height: =430
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(141, 198, 63, 1)
+            Items: ='PARADA U-0221_Equipamentos'
+            SelectedColor: =RGBA(50, 49, 48, 1)
+            SelectedFill: =RGBA(232, 244, 217, 1)
+            Width: =If(varMenuExpandido=true, 975, 1230)
+            X: =If(varMenuExpandido=true, 350, 110)
+            Y: =300
+          Children:
+            - Título_Coluna2:
+                Control: DataTableColumn@1.0.1
+                Variant: Textual
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="Título"
+                  FieldName: ="Title"
+                  Order: =3
+                  Text: =ThisItem.Título
+            - URLGINSPEQ_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: Textual
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="URLGINSPEQ"
+                  FieldName: ="URLGINSPEQ"
+                  Order: =4
+                  Text: =ThisItem.URLGINSPEQ
+            - Tipo1_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: Textual
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="Tipo1"
+                  FieldName: ="Tipo1"
+                  Order: =5
+                  Text: =ThisItem.Tipo1
+            - Servico_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: Textual
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="Servico"
+                  FieldName: ="Servico"
+                  Order: =6
+                  Text: =ThisItem.Servico
+            - CAT_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: Textual
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="CAT"
+                  FieldName: ="CAT"
+                  Order: =7
+                  Text: =ThisItem.CAT
+            - PLH_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: Textual
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="PLH"
+                  FieldName: ="PLH"
+                  Order: =8
+                  Text: =ThisItem.PLH
+            - TIE_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: Textual
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="TIE"
+                  FieldName: ="TIE"
+                  Order: =9
+                  Text: =ThisItem.TIE
+            - ResponsavelCadastro_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: Textual
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="ResponsavelCadastro"
+                  FieldName: ="ResponsavelCadastro"
+                  Order: =10
+                  Text: =ThisItem.ResponsavelCadastro
+            - ResponsavelExecucao_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: Textual
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="ResponsavelExecucao"
+                  FieldName: ="ResponsavelExecucao"
+                  Order: =11
+                  Text: =ThisItem.ResponsavelExecucao
+            - Criado_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: DateTime
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="Criado"
+                  FieldName: ="Created"
+                  Order: =12
+                  Text: =Text(ThisItem.Criado,DateTimeFormat.LongDateTime)
+            - Modificado_Coluna1:
+                Control: DataTableColumn@1.0.1
+                Variant: DateTime
+                IsLocked: true
+                Properties:
+                  FieldDisplayName: ="Modificado"
+                  FieldName: ="Modified"
+                  Order: =13
+                  Text: =Text(ThisItem.Modificado,DateTimeFormat.LongDateTime)
