@@ -1,0 +1,2702 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+Screens:
+  FluxodeEquipe2.0:
+    Properties:
+      Fill: =vg_AppTheme.ColorBG
+      LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    Children:
+      - GlrPessoas:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_ThreeTextOneImageVariant_ver5.0
+          Properties:
+            BorderColor: =vg_AppTheme.ColorMenu
+            BorderThickness: =5
+            Fill: =vg_AppTheme.ColorContent
+            Height: =600
+            Items: |
+              =
+                  If(
+                      IsBlank(CBXBuscaColaborador.Selected),
+                      Sort( Filter(vgSWUsuariosParadas,ID>1),Title,SortOrder.Ascending),
+                      Sort(
+                          Filter(
+                              vgSWUsuariosParadas,
+                              EMail = CBXBuscaColaborador.Selected.EMail
+                          ),
+                          Title,
+                          SortOrder.Ascending
+                      )
+                  )
+            Width: |+
+              =If(vgMenuExtendido=true, 380,500)
+            X: =MenuParadas_6.Width+15
+            Y: =160
+          Children:
+            - Rectangle10_5:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =If(ThisItem.IsSelected,RGBA(255, 255, 255, 0.2),RGBA(58, 188, 182, 0))
+                  Height: =116
+                  OnSelect: =Select(Parent)
+                  Width: =GlrPessoas.Width
+            - Image87:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =84
+                  Image: =Peão
+                  OnSelect: =Select(Parent)
+                  Width: =84
+                  X: =16
+                  Y: =16
+            - Image85:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =84
+                  Image: |-
+                    =If(
+                        IsBlankOrError(UsuáriosdoOffice365.UserPhotoV2(ThisItem.EMail)),
+                        Peão,UsuáriosdoOffice365.UserPhotoV2(ThisItem.EMail)
+                    )
+                  OnSelect: =Select(Parent)
+                  RadiusBottomLeft: =8
+                  RadiusBottomRight: =8
+                  RadiusTopLeft: =8
+                  RadiusTopRight: =8
+                  Width: =84
+                  X: =16
+                  Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            - Title22:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =vg_AppTheme.ColorFont
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.Title
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Parent.TemplateWidth - 185
+                  X: =115
+                  Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle20.Size*1.8 + 2 + Body10.Size*1.8)) / 2
+            - Subtitle20:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =vg_AppTheme.ColorFont
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.Funcao
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Title22.Width
+                  X: =Title22.X
+                  Y: =Title22.Y + Title22.Height
+            - Body10:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =vg_AppTheme.ColorFont
+                  Font: =Font.'Open Sans'
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =Self.Size * 1.8
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =12
+                  Text: =ThisItem.PerfilUsuario
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =Subtitle20.Width
+                  X: =Title22.X
+                  Y: =Subtitle20.Y + Subtitle20.Height
+            - NextArrow17:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  AccessibleLabel: =Self.Tooltip
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =vg_AppTheme.ColorFont
+                  Height: =108
+                  Icon: =Icon.ChevronRight
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =16
+                  PaddingLeft: =16
+                  PaddingRight: =16
+                  PaddingTop: =16
+                  Tooltip: ="Exibir detalhes do item"
+                  Width: =50
+                  X: =Parent.TemplateWidth - Self.Width - 12
+            - Separator22:
+                Control: Rectangle@2.3.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Fill: =vg_AppTheme.ColorMenu
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+      - InspflowIdentificador_7:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Group: Header2.0_7
+          Properties:
+            Fill: =RGBA(0,0,0,1)
+            Height: =100
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =300
+          Children:
+            - Label15_19:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =24
+                  Italic: =true
+                  Size: =8
+                  Text: =Label15.Text
+                  Width: =130
+                  Y: =76
+            - Label15_20:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Right
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =RGBA(255, 255, 255, 1)
+                  Font: =Font.'Open Sans'
+                  Height: =24
+                  Italic: =true
+                  Size: =8
+                  Text: ="REGAP/IE"
+                  Width: =126
+                  X: =174
+                  Y: =76
+            - Image45_15:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =76
+                  HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                  Image: =InspFLOW_Logo
+                  OnSelect: =Set(VgReset,true) And Set(VgEvento,Blank()); Navigate(LoadingScreen,ScreenTransition.Fade)
+                  Tooltip: ="Reiniciar App"
+                  Width: =300
+      - HeaderPadrão_7:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Group: Header2.0_7
+          Properties:
+            Fill: =vg_AppTheme.ColorHeader
+            Height: =100
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =1055
+            X: =300
+          Children:
+            - UserImag_51:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Image: =Peão
+                  RadiusBottomLeft: =180
+                  RadiusBottomRight: =180
+                  RadiusTopLeft: =180
+                  RadiusTopRight: =180
+                  Width: =107
+            - UserImag_52:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Image: |+
+                    =UsuáriosdoOffice365.UserPhotoV2(User().Email)
+
+                  RadiusBottomLeft: =180
+                  RadiusBottomRight: =180
+                  RadiusTopLeft: =180
+                  RadiusTopRight: =180
+                  Width: =107
+            - Lbl_pressurizador_21:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =vg_AppTheme.ColorFont2
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =48
+                  Size: =20
+                  Text: =Lbl_PressurizadorTitulo.Text
+                  Width: =599
+                  X: =257
+            - Lbl_pressurizador_22:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =vg_AppTheme.ColorFont2
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Lighter
+                  Height: =47
+                  Italic: =true
+                  Text: =Lbl_PressurizadorDatas.Text
+                  Width: =599
+                  X: =257
+                  Y: =53
+            - Container49:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =100
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  Width: =150
+                  X: =107
+                Children:
+                  - Lbl_Nome_23:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        AutoHeight: =true
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont2
+                        Font: =Font.'Open Sans'
+                        Height: =21
+                        Overflow: =Overflow.Scroll
+                        Text: |+
+                          =NomeUsuario.Text
+
+                        X: =107
+                        Y: =27
+                  - Lbl_perfil_24:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont2
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Lighter
+                        Height: =15
+                        Italic: =true
+                        Size: =12
+                        Text: =PerfilUsuario.Text
+                        X: =107
+                        Y: =21
+      - Image43_7:
+          Control: Image@2.2.3
+          Group: Header2.0_7
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =vg_AppTheme.ColorHeader
+            Image: ='Logo_Petrobras (1)'
+            Width: =208
+            X: =1158
+      - Image46_7:
+          Control: Image@2.2.3
+          Properties:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Height: =50
+            Image: =menu
+            Width: =50
+            Y: =100
+      - CBXBuscaColaborador:
+          Control: Classic/ComboBox@2.4.0
+          Properties:
+            BorderColor: =vg_AppTheme.ColorMenu
+            BorderThickness: =5
+            ChevronBackground: =vg_AppTheme.ColorHeader
+            ChevronFill: =vg_AppTheme.ColorFont2
+            ChevronHoverBackground: =ColorFade(vg_AppTheme.ColorHeader, -20%)
+            ChevronHoverFill: =vg_AppTheme.ColorBG
+            Color: =vg_AppTheme.ColorFont
+            DefaultSelectedItems: =Filter(UsuariosApp,EMail=varDestinatário, Nome)
+            DisplayFields: =["Title","Funcao"]
+            Fill: =vg_AppTheme.ColorBG
+            Font: =Font.'Open Sans'
+            Height: =49
+            HoverBorderColor: =vg_AppTheme.ColorMenu
+            HoverColor: =vg_AppTheme.ColorFont2
+            HoverFill: =vg_AppTheme.ColorHeader
+            InputTextPlaceholder: ="Digite o nome ou a função"
+            Items: |-
+              =SortByColumns(
+                  vgSWUsuariosParadas,
+                  "Ordenador",
+                  SortOrder.Descending
+              )
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =vg_AppTheme.ColorBG
+            SearchFields: =["Chave"]
+            SelectMultiple: =false
+            SelectionColor: =RGBA(255, 255, 255, 1)
+            SelectionFill: =vg_AppTheme.ColorContent
+            Width: =If(vgMenuExtendido=true, 380,500)
+            X: =MenuParadas_6.Width+15
+            Y: =111
+      - DetalhesColaborador:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            BorderColor: =vg_AppTheme.ColorMenu
+            BorderThickness: =5
+            Fill: =vg_AppTheme.ColorContent
+            Height: =649
+            Width: =If(vgMenuExtendido=true, 640,760)
+            X: =MenuParadas_6.Width+GlrPessoas.Width + 30
+            Y: =111
+          Children:
+            - glrResponsabilidades:
+                Control: Gallery@2.15.0
+                Variant: BrowseLayout_Vertical_ThreeTextOneImageVariant_ver5.0
+                Properties:
+                  BorderColor: =RGBA(21, 135, 128, 0)
+                  BorderThickness: =5
+                  Fill: =RGBA(58, 188, 182, 0)
+                  Height: =372
+                  Items: |-
+                    =Filter(
+                        vgSWEquipamentosParadas,
+                        If(
+                            GlrPessoas.Selected.PerfilUsuario = "EXECUTOR",
+                            RespCadastro = GlrPessoas.Selected.EMail,
+                            PLH = GlrPessoas.Selected.EMail Or TIE = GlrPessoas.Selected.EMail
+                        )
+                    )
+                  OnSelect: |-
+                    =Set(
+                        vgEquipamento,
+                        glrResponsabilidades.Selected.Title
+                    );
+                    Navigate(
+                        'Equipamentos 2.0',
+                        ScreenTransition.Fade
+                    )
+                  Visible: |-
+                    =If(
+                       IsBlank(GlrPessoas.Selected),false,true
+                    )
+                  Width: =DetalhesColaborador.Width
+                  Y: =275
+                Children:
+                  - Image85_1:
+                      Control: Image@2.2.3
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =84
+                        Image: |-
+                          =Switch(ThisItem.Tipo1,
+                          "TORRE", Torres,
+                          "PERMUTADOR DE CALOR", Permutadores,
+                          "SISTEMA DE TUBULAÇÃO", Tubulações,
+                          "VASO DE PRESSÃO", Vasos,
+                          "FILTRO",Filtros,
+                          "DISPOSITIVO DE SEGURANÇA",PSVs
+                          )
+                        OnSelect: =Select(Parent)
+                        RadiusBottomLeft: =8
+                        RadiusBottomRight: =8
+                        RadiusTopLeft: =8
+                        RadiusTopRight: =8
+                        Width: =84
+                        X: =17
+                        Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                  - Title22_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =vg_AppTheme.ColorFont
+                        Font: =Font.'Open Sans'
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =14
+                        Text: =ThisItem.Title
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Parent.TemplateWidth - 185
+                        X: =115
+                        Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle20.Size*1.8 + 2 + Body10.Size*1.8)) / 2
+                  - Subtitle20_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =vg_AppTheme.ColorFont
+                        Font: =Font.'Open Sans'
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.Servico
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title22_1.Width
+                        X: =Title22_1.X
+                        Y: =Title22_1.Y + Title22_1.Height
+                  - Body10_1:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 1)
+                        Color: =vg_AppTheme.ColorFont
+                        Font: =Font.'Open Sans'
+                        FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                        Height: =Self.Size * 1.8
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =12
+                        Text: =ThisItem.Tipo1
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Subtitle20_1.Width
+                        X: =Title22_1.X
+                        Y: =Subtitle20_1.Y + Subtitle20_1.Height
+                  - NextArrow17_1:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        AccessibleLabel: =Self.Tooltip
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont
+                        Height: =100
+                        Icon: =Icon.ChevronRight
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =16
+                        PaddingLeft: =16
+                        PaddingRight: =16
+                        PaddingTop: =16
+                        Tooltip: ="Exibir detalhes do item"
+                        Width: =68
+                        X: =560
+                  - Separator22_1:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =vg_AppTheme.ColorMenu
+                        Height: =8
+                        OnSelect: =Select(Parent)
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - Self.Height
+                  - Rectangle26_1:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: =RGBA(0, 18, 107, 1)
+                        Height: =Parent.TemplateHeight - Separator22_1.Height
+                        OnSelect: =Select(Parent)
+                        Visible: =ThisItem.IsSelected
+                        Width: =4
+            - Label16_79:
+                Control: Label@2.5.1
+                Properties:
+                  Align: =Align.Center
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =vg_AppTheme.ColorFont
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =64
+                  Size: =20
+                  Text: ="Responsabilidades:"
+                  Visible: =If(glrResponsabilidades.AllItemsCount>0,true,false)
+                  Width: =DetalhesColaborador.Width
+                  Y: =207
+            - Container25:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Width: =640
+                  X: =(DetalhesColaborador.Width-Container25.Width)/2
+                  Y: =14
+                Children:
+                  - Image37_5:
+                      Control: Image@2.2.3
+                      Group: PLH_FE_1
+                      Properties:
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        Height: =200
+                        Image: =If(IsBlankOrError(UsuáriosdoOffice365.UserPhotoV2(GlrPessoas.Selected.EMail)),Peão,UsuáriosdoOffice365.UserPhotoV2(GlrPessoas.Selected.EMail))
+                        RadiusBottomLeft: =180
+                        RadiusBottomRight: =180
+                        RadiusTopLeft: =180
+                        RadiusTopRight: =180
+                        Visible: |-
+                          =If(
+                             IsBlank(GlrPessoas.Selected),false,true
+                          )
+                        Width: =200
+                        X: =9
+                  - Label16_78:
+                      Control: Label@2.5.1
+                      Group: PLH_FE_1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont
+                        Font: =Font.'Open Sans'
+                        Height: =65
+                        Italic: =true
+                        Size: =20
+                        Text: |+
+                          =GlrPessoas.Selected.Title
+
+                        Visible: |-
+                          =If(
+                             IsBlank(GlrPessoas.Selected),false,true
+                          )
+                        Width: =410
+                        X: =230
+                        Y: =55
+                  - Image38_5:
+                      Control: Image@2.2.3
+                      Group: PLH_FE_1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =60
+                        HoverBorderColor: |-
+                          =//ColorFade(Self.BorderColor; 20%)
+                          RGBA(58, 188, 182, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        Image: =svgMensagem.Image
+                        OnSelect: |-
+                          =UpdateContext(
+                              {
+                                  VarMensagem: true,
+                                  varDestinatário: GlrPessoas.Selected.EMail
+                              }
+                          )
+                        PressedBorderColor: |-
+                          =//ColorFade(Self.BorderColor; -20%)
+                          RGBA(58, 188, 182, 1)
+                        Visible: |-
+                          =If(
+                             IsBlank(GlrPessoas.Selected),false,true
+                          )
+                        Width: =93
+                        X: =230
+                  - Button1_240:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        Align: =Align.Left
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =vg_AppTheme.ColorFont2
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: |
+                          =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Lighter
+                        Height: =38
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        Italic: =true
+                        OnSelect: =Launch("mailto:"&GlrPessoas.Selected.EMail&"?subject=Parada%20UN-613&body=Via%20InspFlow")
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Text: =GlrPessoas.Selected.EMail
+                        Visible: |-
+                          =If(
+                             IsBlank(GlrPessoas.Selected),false,true
+                          )
+                        Width: =394
+                        X: =228
+                        Y: =138
+                  - Label16_80:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont
+                        Font: =Font.'Open Sans'
+                        Height: =38
+                        Italic: =true
+                        Size: =15
+                        Text: |+
+                          =GlrPessoas.Selected.Funcao
+
+                        Visible: |-
+                          =If(
+                             IsBlank(GlrPessoas.Selected),false,true
+                          )
+                        Width: =413
+                        X: =227
+                        Y: =104
+                  - Button1_241:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        Align: =Align.Left
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =0
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        DisplayMode: |
+                          =DisplayMode.Edit
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        FontWeight: =FontWeight.Lighter
+                        Height: =136
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        Italic: =true
+                        OnSelect: |-
+                          =UpdateContext(
+                              {
+                                  VarMensagem: true,
+                                  varDestinatário: GlrPessoas.Selected.EMail
+                              }
+                          )
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Text: =
+                        Visible: |-
+                          =If(
+                             IsBlank(GlrPessoas.Selected),false,true
+                          )
+                        Width: =296
+                        X: =225
+                        Y: =6
+      - MenuParadas_6:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =vg_AppTheme.ColorMenu
+            Height: =668
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Visible: |-
+              =/*If(
+                  IsBlank(VgFunção) Or VgFunção="";true;false
+              )*/
+              If(
+                  VgFunção = "planos" Or VgFunção = "laboratório" Or VgFunção = "rotina",
+                  false,
+                  true
+              )
+            Width: =If(vgMenuExtendido=true, 300,60)
+            Y: =100
+          Children:
+            - ctnOrganizaBotões_6:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =559
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =15
+                  LayoutOverflowY: =LayoutOverflow.Scroll
+                  Visible: =vgMenuExtendido
+                  Width: =300
+                  Y: =65
+                Children:
+                  - btTarefas_6:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =3
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('FluxoAtividades 2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: ="Tarefas"
+                        Visible: =false
+                        Width: =270
+                        X: =15
+                        Y: =160
+                  - Button1_91:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('Passagem de Serviço 2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: |-
+                          ="📖Passagem de Serviços"
+                        Width: =270
+                        X: =15
+                        Y: =105
+                  - Button1_167:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('FluxodeInspeção2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: |-
+                          ="🔎Inspeção"
+                        Width: =270
+                        X: =15
+                        Y: =220
+                  - Button1_183:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('FluxodeEND''s2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: |-
+                          ="🛠️Manutenção"
+                        Width: =270
+                        X: =15
+                        Y: =110
+                  - ButtonEquipamentos_8:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('Equipamentos 2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: |-
+                          ="🏭Equipamentos"
+                        Visible: =vgBtEquipamento
+                        Width: =270
+                        X: =15
+                        Y: =50
+                  - Button1_184:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =vg_AppTheme.ColorFont
+                        DisabledColor: =vg_AppTheme.ColorFont
+                        DisabledFill: =vg_AppTheme.ColorContent
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('FluxodeEquipe2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: |-
+                          ="👥Equipe"
+                        Visible: =vgBtEquipe
+                        Width: =270
+                        X: =15
+                        Y: =220
+                  - Button1_185:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        DisplayMode: |-
+                          =If(
+                              PerfilUsuario.Text = "Desenvolvedor" Or PerfilUsuario.Text = "ANALISTA",
+                              DisplayMode.Edit,
+                              DisplayMode.Disabled
+                          )
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate(VisãoAdmin,ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: |-
+                          ="🥷Visão Admin"
+                        Visible: =vgBtVisãoAdimin
+                        Width: =270
+                        X: =15
+                        Y: =560
+                  - Button1_188:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        DisplayMode: |-
+                          =If(
+                              PerfilUsuario.Text = "Desenvolvedor" Or PerfilUsuario.Text = "ANALISTA",
+                              DisplayMode.Edit,
+                              DisplayMode.Disabled
+                          )
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('VisãoPlanejador2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: |-
+                          ="💻Visão Planejador"
+                        Visible: =vgBtVisãoPlanejador
+                        Width: =270
+                        X: =15
+                        Y: =55
+                  - Button1_92:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Launch(vgSWPBI)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: |-
+                          ="📊Painel Gerencial PBI"
+                        Visible: =vgBtPainelPBI
+                        Width: =270
+                        X: =15
+                        Y: =440
+                  - btHubParada_6:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =3
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Launch("https://petrobrasbr-my.sharepoint.com/:wb:/r/personal/rafaelreis_petrobras_com_br/Documents/Whiteboards/Hub%20Paradas%202024%20-%20REGAP-IE%20-%20U-613.whiteboard?d=w7390cb27396e441caa4285f616404b93&csf=1&web=1&e=QtLoAH")
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: ="Hub de Parada"
+                        Visible: =false
+                        Width: =270
+                        X: =15
+                        Y: =115
+                  - BtFluxoManutenção_6:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =RGBA(255, 255, 255, 1)
+                        BorderThickness: =3
+                        Color: =RGBA(255, 255, 255, 1)
+                        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+                        DisabledColor: =RGBA(255, 255, 255, 1)
+                        DisabledFill: =RGBA(58, 188, 182, 1)
+                        DisplayMode: |-
+                          =If(
+                              LookUp(UsuariosApp,EMail=User().Email,PerfilUsuario)="Desenvolvedor" Or
+                              LookUp(UsuariosApp,EMail=User().Email,PerfilUsuario)="ANALISTA",
+                              DisplayMode.Edit,DisplayMode.Disabled
+                          )
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =45
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('FluxodeManutenção2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Text: ="Atividades de Manutenção"
+                        Visible: =false
+                        Width: =270
+                        X: =15
+                        Y: =380
+            - Label16_39:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =vg_AppTheme.ColorFont
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Semibold
+                  Height: =50
+                  Size: =20
+                  Text: ="⬅Menu"
+                  Visible: =vgMenuExtendido
+                  Width: =252
+                  X: =48
+            - Image46_18:
+                Control: Image@2.2.3
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Height: =50
+                  Image: |-
+                    ="data:image/svg+xml;utf8 ," & EncodeUrl(
+                        "<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48' version='1.1'>
+                            <path d='M 6 12 L 6 15 24 15 L 42 15 42 12 L 42 9 24 9 L 6 9 6 12 M 6 24 L 6 27 24 27 L 42 27 42 24 L 42 21 24 21 L 6 21 6 24 M 6 36 L 6 39 24 39 L 42 39 42 36 L 42 33 24 33 L 6 33 6 36' stroke='none' fill='"&vg_AppTheme.ColorFontTxt&"' fill-rule='evenodd'/>
+                        </svg>"
+                    )
+                  Width: =50
+            - btRecolheMenu_6:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderThickness: =0
+                  Color: =RGBA(0, 0, 0, 1)
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  DisabledFill: =RGBA(0, 0, 0, 0)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Normal
+                  Height: =50
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                  Italic: =true
+                  OnSelect: =Set(vgMenuExtendido,false);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{MenuExtendido:"false"})
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =ColorFade(RGBA(255, 255, 255, 1), -20%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =10
+                  Text: =
+                  Tooltip: ="Recolher menu"
+                  VerticalAlign: =VerticalAlign.Bottom
+                  Visible: =vgMenuExtendido
+                  Width: =50
+            - TrocaEqpto_21:
+                Control: Classic/Button@2.2.0
+                Properties:
+                  Align: =Align.Left
+                  BorderColor: =ColorFade(Self.Fill, -15%)
+                  BorderThickness: =0
+                  Color: =vg_AppTheme.ColorFont
+                  DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                  DisabledFill: =RGBA(0, 0, 0, 0)
+                  Fill: =RGBA(0, 0, 0, 0)
+                  Font: =Font.'Open Sans'
+                  FontWeight: =FontWeight.Normal
+                  Height: =85
+                  HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                  HoverColor: =RGBA(255, 255, 255, 1)
+                  HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                  Italic: =true
+                  OnSelect: =Set(vgMenuExtendido,true);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{MenuExtendido:"true"})
+                  PressedBorderColor: =Self.Fill
+                  PressedColor: =Self.Fill
+                  PressedFill: =ColorFade(RGBA(255, 255, 255, 1), -20%)
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Size: =9
+                  Text: ="Extender Menu➡️"
+                  VerticalAlign: =VerticalAlign.Bottom
+                  Visible: =!vgMenuExtendido
+                  Width: =60
+            - Container14_6:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =521
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =15
+                  Visible: =!vgMenuExtendido
+                  Width: =60
+                  Y: =85
+                Children:
+                  - Icon2_28:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont
+                        Height: =40
+                        Icon: =Icon.Home
+                        OnSelect: =Navigate('FluxoAtividades 2.0',ScreenTransition.Fade)
+                        Width: =40
+                        Y: |
+                          =0
+                  - BtMiniPassagemServiço_42:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =Color.Black
+                        DisabledColor: =Color.Black
+                        DisabledFill: =vg_AppTheme.ColorHeader
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('Passagem de Serviço 2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Size: =20
+                        Text: |-
+                          ="📖"
+                        Width: =40
+                        X: =4
+                        Y: =150
+                  - BtMiniInspeção_6:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =Color.Black
+                        DisabledColor: =Color.Black
+                        DisabledFill: =vg_AppTheme.ColorHeader
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('FluxodeInspeção2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Size: =20
+                        Text: |-
+                          ="🔎"
+                        Width: =40
+                        X: =4
+                        Y: =150
+                  - BtMiniPassagemServiço_43:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =Color.Black
+                        DisabledColor: =Color.Black
+                        DisabledFill: =vg_AppTheme.ColorHeader
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('FluxodeEND''s2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Size: =20
+                        Text: |-
+                          ="🛠️"
+                        Width: =40
+                        X: =4
+                        Y: =150
+                  - BtMiniPassagemServiço_44:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: |-
+                          =Switch(VgFunção,
+                              "laboratório",RGBA(255, 255, 255, 1),
+                              "planos",Color.Black
+                          )
+                        DisabledBorderColor: =Color.Black
+                        DisabledColor: =Color.Black
+                        DisabledFill: =vg_AppTheme.ColorHeader
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('Equipamentos 2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Size: =20
+                        Text: |-
+                          ="🏭"
+                        Visible: =vgBtEquipamento
+                        Width: =40
+                        X: =4
+                        Y: =150
+                  - BtMiniPassagemServiço_45:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: |-
+                          =Switch(VgFunção,
+                              "laboratório",RGBA(255, 255, 255, 1),
+                              "planos",Color.Black
+                          )
+                        DisabledBorderColor: =vg_AppTheme.ColorFont
+                        DisabledColor: =Color.Black
+                        DisabledFill: =vg_AppTheme.ColorContent
+                        DisplayMode: =DisplayMode.Disabled
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('FluxodeEquipe2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Size: =20
+                        Text: |-
+                          ="👥"
+                        Visible: =vgBtEquipe
+                        Width: =40
+                        X: =4
+                        Y: =150
+                  - BtMiniPassagemServiço_46:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: |-
+                          =Switch(VgFunção,
+                              "laboratório",RGBA(255, 255, 255, 1),
+                              "planos",Color.Black
+                          )
+                        DisabledBorderColor: =Color.Black
+                        DisabledColor: =Color.Black
+                        DisabledFill: =vg_AppTheme.ColorHeader
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate(VisãoAdmin,ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Size: =20
+                        Text: |-
+                          ="🥷"
+                        Visible: =vgBtVisãoAdimin
+                        Width: =40
+                        X: =4
+                        Y: =150
+                  - BtMiniPassagemServiço_47:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: |-
+                          =Switch(VgFunção,
+                              "laboratório",RGBA(255, 255, 255, 1),
+                              "planos",Color.Black
+                          )
+                        DisabledBorderColor: =Color.Black
+                        DisabledColor: =Color.Black
+                        DisabledFill: =vg_AppTheme.ColorHeader
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Navigate('VisãoPlanejador2.0',ScreenTransition.Fade)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Size: =20
+                        Text: |-
+                          ="💻"
+                        Visible: =vgBtVisãoPlanejador
+                        Width: =40
+                        X: =4
+                        Y: =150
+                  - BtMiniPassagemServiço_48:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: |-
+                          =Switch(VgFunção,
+                              "laboratório",RGBA(255, 255, 255, 1),
+                              "planos",Color.Black
+                          )
+                        DisabledBorderColor: =Color.Black
+                        DisabledColor: =Color.Black
+                        DisabledFill: =vg_AppTheme.ColorHeader
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(RGBA(255, 255, 255, 0.5), -20%)
+                        OnSelect: =Launch(vgSWPBI)
+                        PressedBorderColor: =RGBA(255, 255, 255, 1)
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =
+                        Size: =20
+                        Text: |-
+                          ="📊"
+                        Visible: =vgBtPainelPBI
+                        Width: =40
+                        X: =4
+                        Y: =150
+            - Icon2_29:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =vg_AppTheme.ColorFont
+                  Height: =40
+                  Icon: =Icon.Home
+                  OnSelect: =Navigate('FluxoAtividades 2.0',ScreenTransition.Fade)
+                  Width: =40
+                  X: =255
+                  Y: =5
+            - Icon2_30:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  BorderColor: =RGBA(0, 18, 107, 1)
+                  Color: =vg_AppTheme.ColorFont
+                  Height: =40
+                  Icon: =Icon.Settings
+                  OnSelect: =UpdateContext({vcPopUpConfig:true})
+                  Width: =40
+                  X: =10
+                  Y: =620
+      - PortaPopsUpsEquipe:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =768
+            Visible: =VarMensagem Or vcPopUpConfig Or loading
+            Width: =1366
+          Children:
+            - PopUpMensagemAtividades_5:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  BorderColor: =vg_AppTheme.ColorMenu
+                  BorderThickness: =5
+                  DropShadow: =DropShadow.ExtraBold
+                  Fill: =vg_AppTheme.ColorContent
+                  Height: |
+                    =668
+                  Visible: |+
+                    =VarMensagem
+
+                  Width: =1266
+                  X: =(PortaPopUps_Turno.Width - PopUpMensagemAtividades_5.Width)/2
+                  Y: =(PortaPopUps_Turno.Height - PopUpMensagemAtividades_5.Height)/2
+                Children:
+                  - Label8_46:
+                      Control: Label@2.5.1
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont2
+                        Fill: =ColorFade(vg_AppTheme.ColorHeader,20%)
+                        Font: =Font.'Open Sans'
+                        Height: =80
+                        Size: =30
+                        Text: ="               Mensagem Interna"
+                        Width: =Parent.Width
+                  - FrmMensagem_14:
+                      Control: Form@2.4.4
+                      Variant: Classic
+                      Layout: Vertical
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorFont
+                        DataSource: =vgSWEventosParadas
+                        DefaultMode: =FormMode.New
+                        Height: =583
+                        NumberOfColumns: =2
+                        OnSuccess: |
+                          =false
+                        SnapToColumns: =false
+                        Width: =1266
+                        Y: =85
+                      Children:
+                        - Usuário Designado(principal)_DataCard1_14:
+                            Control: TypedDataCard@1.0.7
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(118, 0, 0, 1)
+                              DataField: ="Usu_x00e1_rioDesignado_x0028_pri"
+                              Default: =ThisItem.UsuarioDesignadoPrincipal
+                              DisplayName: =DataSourceInfo([@'Eventos U-613'],DataSourceInfo.DisplayName,'UsuárioDesignado(Principal)')
+                              MaxLength: =DataSourceInfo([@'Eventos U-613'], DataSourceInfo.MaxLength, 'UsuárioDesignado(Principal)')
+                              Required: =true
+                              Update: =CBXDestinatario_14.Selected.EMail
+                              Width: =616
+                              X: =0
+                              Y: =0
+                            Children:
+                              - DataCardKey12_16:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =vg_AppTheme.ColorFont
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =15
+                                    Text: ="Destinatario"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =21
+                                    Y: =10
+                              - ErrorMessage12_16:
+                                  Control: Label@2.5.1
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(168, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =10
+                                    Live: =Live.Assertive
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =14
+                                    Text: =Parent.Error
+                                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =
+                              - StarVisible12_16:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldRequired
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(255, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =DataCardKey12_16.Height
+                                    Text: ="*"
+                                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =30
+                                    Wrap: =false
+                                    Y: =DataCardKey12_16.Y
+                              - CBXDestinatario_14:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =vg_AppTheme.ColorMenu
+                                    ChevronBackground: =vg_AppTheme.ColorHeader
+                                    ChevronFill: =vg_AppTheme.ColorFont2
+                                    ChevronHoverBackground: =ColorFade(vg_AppTheme.ColorHeader, -20%)
+                                    ChevronHoverFill: =vg_AppTheme.ColorBG
+                                    Color: =vg_AppTheme.ColorFont
+                                    DefaultSelectedItems: |-
+                                      =LookUp(
+                                          vgSWUsuariosParadas,
+                                          EMail = varDestinatário
+                                      )
+                                    DisplayFields: =["Title","Funcao"]
+                                    Fill: =vg_AppTheme.ColorBG
+                                    Font: =Font.'Open Sans'
+                                    Height: =49
+                                    HoverColor: =vg_AppTheme.ColorFont2
+                                    HoverFill: =vg_AppTheme.ColorHeader
+                                    InputTextPlaceholder: ="Digite o nome ou a função"
+                                    Items: =vgSWUsuariosParadas
+                                    OnChange: |-
+                                      =  UpdateContext({varDestinatário: CBXDestinatario_14.Selected.EMail});
+                                      Reset(CBXEmCopia_14)
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =vg_AppTheme.ColorBG
+                                    SearchFields: =["SearchField"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =vg_AppTheme.ColorContent
+                                    Width: =380
+                                    X: =40
+                                    Y: =43
+                        - Usuário Designado(secundário)_DataCard2_14:
+                            Control: TypedDataCard@1.0.7
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="Usu_x00e1_rioDesignado_x0028_sec"
+                              Default: =ThisItem.UsuarioDesignadoSecundario
+                              DisplayName: =DataSourceInfo([@'Eventos U-613'],DataSourceInfo.DisplayName,UsuárioDesignadoSecundário)
+                              Height: =24
+                              MaxLength: =DataSourceInfo([@'Eventos U-613'], DataSourceInfo.MaxLength, UsuárioDesignadoSecundário)
+                              Required: =false
+                              Update: =CBXEmCopia_14.Selected.EMail
+                              Visible: =If(IsBlank(CBXDestinatario_14.Selected),false,true)
+                              Width: =616
+                              X: =1
+                              Y: =0
+                            Children:
+                              - DataCardKey13_16:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =vg_AppTheme.ColorFont
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Bold
+                                    Height: =34
+                                    Size: =15
+                                    Text: ="Notificar colaborador (em cópia)"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - ErrorMessage13_16:
+                                  Control: Label@2.5.1
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(168, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =10
+                                    Live: =Live.Assertive
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =14
+                                    Text: =Parent.Error
+                                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =
+                              - StarVisible13_16:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldRequired
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =DataCardKey13_16.Height
+                                    Text: ="*"
+                                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =30
+                                    Wrap: =false
+                                    Y: =DataCardKey13_16.Y
+                              - CBXEmCopia_14:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =vg_AppTheme.ColorMenu
+                                    ChevronBackground: =vg_AppTheme.ColorHeader
+                                    ChevronFill: =vg_AppTheme.ColorFont2
+                                    ChevronHoverBackground: =ColorFade(vg_AppTheme.ColorHeader, -20%)
+                                    ChevronHoverFill: =vg_AppTheme.ColorBG
+                                    Color: =vg_AppTheme.ColorFont
+                                    DisplayFields: =["Title","Funcao"]
+                                    Fill: =vg_AppTheme.ColorBG
+                                    Font: =Font.'Open Sans'
+                                    Height: =49
+                                    HoverColor: =vg_AppTheme.ColorFont2
+                                    HoverFill: =vg_AppTheme.ColorHeader
+                                    InputTextPlaceholder: ="Digite o nome ou a função"
+                                    Items: =vgSWUsuariosParadas
+                                    OnChange: |
+                                      =UpdateContext({vcUsuarioDesignadoSecundario: CBXEmCopia_14.Selected.EMail})
+                                    PressedColor: =vg_AppTheme.ColorBG
+                                    PressedFill: =vg_AppTheme.ColorBG
+                                    SearchFields: =["SearchField"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =vg_AppTheme.ColorContent
+                                    Width: =380
+                                    X: =30
+                                    Y: =43
+                        - Equipamento Envolvido (principal)_DataCard1_14:
+                            Control: TypedDataCard@1.0.7
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="EquipamentoEnvolvido_x0028_princ"
+                              Default: =ThisItem.EquipamentoEnvolvidoPrincipal
+                              DisplayName: =DataSourceInfo([@'Eventos U-613'],DataSourceInfo.DisplayName,'EquipamentoEnvolvido(Principal)')
+                              MaxLength: =DataSourceInfo([@'Eventos U-613'], DataSourceInfo.MaxLength, 'EquipamentoEnvolvido(Principal)')
+                              Required: =true
+                              Update: =CBXSelectEquip_28.Selected.Title
+                              Width: =616
+                              X: =0
+                              Y: =1
+                            Children:
+                              - DataCardKey14_19:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =vg_AppTheme.ColorFont
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =15
+                                    Text: ="Selecione equipamento"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - ErrorMessage14_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(168, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =10
+                                    Live: =Live.Assertive
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =14
+                                    Text: =Parent.Error
+                                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =
+                              - StarVisible14_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldRequired
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(255, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =DataCardKey14_19.Height
+                                    Text: ="*"
+                                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =30
+                                    Wrap: =false
+                                    Y: =DataCardKey14_19.Y
+                              - CBXSelectEquip_28:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =vg_AppTheme.ColorMenu
+                                    ChevronBackground: =vg_AppTheme.ColorHeader
+                                    ChevronFill: =vg_AppTheme.ColorFont2
+                                    ChevronHoverBackground: =ColorFade(vg_AppTheme.ColorHeader, -20%)
+                                    ChevronHoverFill: =vg_AppTheme.ColorBG
+                                    Color: =vg_AppTheme.ColorFont
+                                    DisplayFields: =["Title","Servico"]
+                                    Fill: =vg_AppTheme.ColorBG
+                                    Font: =Font.'Open Sans'
+                                    Height: =49
+                                    HoverColor: =vg_AppTheme.ColorFont2
+                                    HoverFill: =vg_AppTheme.ColorHeader
+                                    InputTextPlaceholder: ="Digite TAG ou Serviço"
+                                    Items: =vgSWEquipamentosParadas
+                                    OnChange: =UpdateContext({vcEquipamentoEnvolvidoPrincipal:CBXSelectEquip_28.Selected.Title})
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =vg_AppTheme.ColorBG
+                                    SearchFields: =["Title"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =vg_AppTheme.ColorContent
+                                    Width: =380
+                                    X: =40
+                                    Y: =40
+                        - Medida relacionada (principal)_DataCard1_14:
+                            Control: TypedDataCard@1.0.7
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="Medidarelacionada_x0028_principa"
+                              Default: =ThisItem.MedidaRelacionadaPrincipal
+                              DisplayName: =DataSourceInfo([@'Eventos U-613'],DataSourceInfo.DisplayName,'MedidaRelacionada(Principal)')
+                              MaxLength: =DataSourceInfo([@'Eventos U-613'], DataSourceInfo.MaxLength, 'MedidaRelacionada(Principal)')
+                              Required: =false
+                              Update: =CBXSelectEquip_29.Selected.Title
+                              Width: =616
+                              X: =1
+                              Y: =1
+                            Children:
+                              - DataCardKey16_19:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =vg_AppTheme.ColorFont
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =15
+                                    Text: ="Medida relacionada"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - ErrorMessage16_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(168, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =10
+                                    Live: =Live.Assertive
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =14
+                                    Text: =Parent.Error
+                                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =
+                              - StarVisible16_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldRequired
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(255, 255, 255, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =DataCardKey16_19.Height
+                                    Text: ="*"
+                                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =30
+                                    Wrap: =false
+                                    Y: =DataCardKey16_19.Y
+                              - CBXSelectEquip_29:
+                                  Control: Classic/ComboBox@2.4.0
+                                  Properties:
+                                    BorderColor: =vg_AppTheme.ColorMenu
+                                    ChevronBackground: =vg_AppTheme.ColorHeader
+                                    ChevronFill: =vg_AppTheme.ColorFont2
+                                    ChevronHoverBackground: =ColorFade(vg_AppTheme.ColorHeader, -20%)
+                                    ChevronHoverFill: =vg_AppTheme.ColorBG
+                                    Color: =vg_AppTheme.ColorFont
+                                    DisplayFields: =["TextoBrevedaMedida","Title"]
+                                    Fill: =vg_AppTheme.ColorBG
+                                    Font: =Font.'Open Sans'
+                                    Height: =49
+                                    HoverColor: =vg_AppTheme.ColorFont2
+                                    HoverFill: =vg_AppTheme.ColorHeader
+                                    InputTextPlaceholder: ="Digite TAG ou Serviço"
+                                    Items: =vgSWAcompanhamentoParadas
+                                    OnChange: =UpdateContext({vcMedidaRelacionadaPrincipal:CBXSelectEquip_29.Selected.Title})
+                                    PressedColor: =vg_AppTheme.ColorBG
+                                    PressedFill: =vg_AppTheme.ColorBG
+                                    SearchFields: =["TextoBrevedaMedida"]
+                                    SelectMultiple: =false
+                                    SelectionColor: =RGBA(255, 255, 255, 1)
+                                    SelectionFill: =vg_AppTheme.ColorContent
+                                    Width: =380
+                                    X: =30
+                                    Y: =43
+                        - Descrição_DataCard2_21:
+                            Control: TypedDataCard@1.0.7
+                            Variant: ClassicTextualMultilineEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="Descri_x00e7__x00e3_o"
+                              Default: =ThisItem.Descricao
+                              DisplayName: =DataSourceInfo([@'Eventos U-613'],DataSourceInfo.DisplayName,Descrição)
+                              Height: =126
+                              Required: =true
+                              Update: =DataCardValue61_14.Text
+                              Width: =1224
+                              X: =0
+                              Y: =2
+                            Children:
+                              - DataCardKey61_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =vg_AppTheme.ColorFont
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =15
+                                    Text: ="Mensagem"
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue61_14:
+                                  Control: Classic/TextInput@2.3.2
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    BorderColor: =vg_AppTheme.ColorMenu
+                                    Color: =vg_AppTheme.ColorFont
+                                    Default: =Parent.Default
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Fill: =vg_AppTheme.ColorBG
+                                    Font: =Font.'Open Sans'
+                                    Height: =80
+                                    HoverBorderColor: =vg_AppTheme.ColorBG
+                                    HoverFill: =vg_AppTheme.ColorHeader
+                                    Mode: =TextMode.MultiLine
+                                    OnChange: =UpdateContext({vcDescricao:DataCardValue61_14.Text})
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =DataCardKey61_14.Y + DataCardKey61_14.Height + 5
+                              - ErrorMessage62_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(168, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =10
+                                    Live: =Live.Assertive
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =14
+                                    Text: =Parent.Error
+                                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =DataCardValue61_14.Y + DataCardValue61_14.Height
+                              - StarVisible62_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldRequired
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(255, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =DataCardKey61_14.Height
+                                    Text: ="*"
+                                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =30
+                                    Wrap: =false
+                                    Y: =DataCardKey61_14.Y
+                        - Anexos_DataCard1_20:
+                            Control: TypedDataCard@1.0.7
+                            Variant: ClassicAttachmentsEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="{Attachments}"
+                              Default: =ThisItem.'{Attachments}'
+                              DisplayName: =DataSourceInfo([@'Eventos U-613'],DataSourceInfo.DisplayName,Anexos)
+                              Required: =false
+                              Update: =DataCardValue58_14.Attachments
+                              Width: =306
+                              X: =1
+                              Y: =2
+                            Children:
+                              - DataCardKey58_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =vg_AppTheme.ColorFont
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =34
+                                    Size: =15
+                                    Text: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue58_14:
+                                  Control: Attachments@2.3.0
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    BorderColor: =vg_AppTheme.ColorMenu
+                                    Color: =vg_AppTheme.ColorFont
+                                    DisplayMode: =Parent.DisplayMode
+                                    Fill: =vg_AppTheme.ColorBG
+                                    Font: =Font.'Open Sans'
+                                    Height: =118
+                                    HoverFill: =vg_AppTheme.ColorHeader
+                                    ItemColor: =RGBA(255, 255, 255, 1)
+                                    ItemFill: =RGBA(56, 96, 178, 1)
+                                    ItemHoverFill: =RGBA(186, 202, 226, 1)
+                                    Items: =Parent.Default
+                                    PaddingBottom: =5
+                                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    PressedColor: =RGBA(255, 255, 255, 1)
+                                    PressedFill: =RGBA(58, 188, 182, 1)
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =236
+                                    X: =30
+                                    Y: =DataCardKey58_14.Y + DataCardKey58_14.Height + 5
+                              - ErrorMessage59_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(168, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =10
+                                    Live: =Live.Assertive
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =14
+                                    Text: =Parent.Error
+                                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =DataCardValue58_14.Y + DataCardValue58_14.Height
+                              - StarVisible59_14:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldRequired
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =DataCardKey58_14.Height
+                                    Text: ="*"
+                                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =30
+                                    Wrap: =false
+                                    Y: =DataCardKey58_14.Y
+                        - Responsavel_DataCard1_16:
+                            Control: TypedDataCard@1.0.7
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="Responsavel"
+                              Default: =ThisItem.Responsavel
+                              DisplayName: =DataSourceInfo([@'Eventos U-613'],DataSourceInfo.DisplayName,Responsavel)
+                              MaxLength: =DataSourceInfo([@'Eventos U-613'], DataSourceInfo.MaxLength, Responsavel)
+                              Required: =false
+                              Update: =DataCardValue11_20.Text
+                              Visible: =false
+                              Width: =616
+                              X: =0
+                              Y: =3
+                            Children:
+                              - DataCardKey11_21:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =34
+                                    Text: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue11_20:
+                                  Control: Classic/TextInput@2.3.2
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                    Default: =User().Email
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.'Open Sans'
+                                    HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                    HoverFill: =RGBA(186, 202, 226, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =DataCardKey11_21.Y + DataCardKey11_21.Height + 5
+                              - ErrorMessage11_21:
+                                  Control: Label@2.5.1
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(168, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =10
+                                    Live: =Live.Assertive
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =14
+                                    Text: =Parent.Error
+                                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =DataCardValue11_20.Y + DataCardValue11_20.Height
+                              - StarVisible11_21:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldRequired
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =DataCardKey11_21.Height
+                                    Text: ="*"
+                                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =30
+                                    Wrap: =false
+                                    Y: =DataCardKey11_21.Y
+                        - Título_DataCard1_20:
+                            Control: TypedDataCard@1.0.7
+                            Variant: ClassicTextualEdit
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              DataField: ="Title"
+                              Default: =ThisItem.Title
+                              DisplayName: =DataSourceInfo([@'Eventos U-613'],DataSourceInfo.DisplayName,Título)
+                              MaxLength: =DataSourceInfo([@'Eventos U-613'], DataSourceInfo.MaxLength, Título)
+                              Required: =false
+                              Update: =DataCardValue2_21.Text
+                              Visible: =false
+                              Width: =616
+                              X: =1
+                              Y: =3
+                            Children:
+                              - DataCardKey2_21:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldName
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =34
+                                    Text: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    Wrap: =false
+                                    X: =30
+                                    Y: =10
+                              - DataCardValue2_21:
+                                  Control: Classic/TextInput@2.3.2
+                                  MetadataKey: FieldValue
+                                  Properties:
+                                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                                    Default: ="Mensagem"
+                                    DelayOutput: =true
+                                    DisplayMode: =Parent.DisplayMode
+                                    Font: =Font.'Open Sans'
+                                    HoverBorderColor: =RGBA(0, 18, 107, 1)
+                                    HoverFill: =RGBA(186, 202, 226, 1)
+                                    MaxLength: =Parent.MaxLength
+                                    PaddingLeft: =5
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                    Tooltip: =Parent.DisplayName
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =DataCardKey2_21.Y + DataCardKey2_21.Height + 5
+                              - ErrorMessage2_21:
+                                  Control: Label@2.5.1
+                                  MetadataKey: ErrorMessage
+                                  Properties:
+                                    AutoHeight: =true
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(168, 0, 0, 1)
+                                    Font: =Font.'Open Sans'
+                                    FontWeight: =FontWeight.Semibold
+                                    Height: =10
+                                    Live: =Live.Assertive
+                                    PaddingBottom: =0
+                                    PaddingLeft: =0
+                                    PaddingRight: =0
+                                    PaddingTop: =0
+                                    Size: =14
+                                    Text: =Parent.Error
+                                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                                    Width: =Parent.Width - 60
+                                    X: =30
+                                    Y: =DataCardValue2_21.Y + DataCardValue2_21.Height
+                              - StarVisible2_21:
+                                  Control: Label@2.5.1
+                                  MetadataKey: FieldRequired
+                                  Properties:
+                                    Align: =Align.Center
+                                    BorderColor: =RGBA(0, 0, 0, 1)
+                                    Color: =RGBA(0, 18, 107, 1)
+                                    Font: =Font.'Open Sans'
+                                    Height: =DataCardKey2_21.Height
+                                    Text: ="*"
+                                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                    Width: =30
+                                    Wrap: =false
+                                    Y: =DataCardKey2_21.Y
+                  - Image17_44:
+                      Control: Image@2.2.3
+                      Group: BotãoConfirma_37
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =107
+                        Image: ="data:image/svg+xml;utf8 ," & EncodeUrl("<svg width='49' height='49' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xml:space='preserve' overflow='hidden'><g transform='translate(-805 -638)'><path d='M818.811 670.682 810.042 661.914 812.208 659.748 818.811 666.351 833.953 651.209 836.119 653.374 818.811 670.682Z' fill='"&vg_AppTheme.ColorFontTxt&"'/><path d='M831.456 661.99 843.196 661.99 843.196 665.052 831.456 665.052Z' fill='"&vg_AppTheme.ColorFontTxt&"'/><path d='M837.071 656.375 848.811 656.375 848.811 659.438 837.071 659.438Z' fill='"&vg_AppTheme.ColorFontTxt&"'/><path d='M825.842 667.604 837.581 667.604 837.581 670.667 825.842 670.667Z' fill='"&vg_AppTheme.ColorFontTxt&"'/></g></svg>")
+                        OnSelect: =
+                        Width: =104
+                        X: =920
+                        Y: =543
+                  - Button1_369:
+                      Control: Classic/Button@2.2.0
+                      Group: BotãoConfirma_37
+                      Properties:
+                        Align: =Align.Right
+                        BorderColor: =vg_AppTheme.ColorFont
+                        BorderThickness: =3
+                        Color: =vg_AppTheme.ColorFont
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Font: =Font.'Open Sans'
+                        Height: =65
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(vg_AppTheme.ColorHeader, -20%)
+                        OnSelect: |-
+                          =SubmitForm(FrmMensagem_14);
+                          Switch(
+                              VgEvento.Nome,
+                              "PARADA U-613",
+                              If(
+                                  IsBlank(FrmMensagem_14.Error),
+                                  UpdateContext(
+                                      {
+                                          VarMensagem: false,
+                                          loading: true
+                                      }
+                                  );
+                                  Patch(
+                                      'EventosPARADA HDS: U-0106',
+                                      LookUp(
+                                          'EventosPARADA HDS: U-0106',
+                                          ID = FrmMensagem_14.LastSubmit.ID
+                                      ),
+                                      {
+                                          UsuarioPrincipal: varDestinatário,
+                                          UsuarioDesignadoSecundario: vcUsuarioDesignadoSecundario,
+                                          EquipamentoEnvolvidoPrincipal: vcEquipamentoEnvolvidoPrincipal,
+                                          Descricao: vcDescricao,
+                                          MedidaRelacionadaPrincipal: vcMedidaRelacionadaPrincipal
+                                      }
+                                  ),
+                                  Notify(
+                                      "Verifique os campos obrigatórios",
+                                      NotificationType.Warning
+                                  )
+                              ),
+                              "PARADA HDS: U-0106",
+                              If(
+                                  IsBlank(FrmMensagem_14.Error),
+                                  UpdateContext(
+                                      {
+                                          VarMensagem: false,
+                                          loading: true
+                                      }
+                                  );
+                                  Patch(
+                                      'EventosPARADA HDS: U-0106',
+                                      LookUp(
+                                          'EventosPARADA HDS: U-0106',
+                                          ID = /*Max(
+                                              'EventosPARADA HDS: U-0106';
+                                              ID
+                                          )*/ FrmMensagem_14.LastSubmit.ID
+                                      ),
+                                      {
+                                          UsuarioPrincipal: varDestinatário,
+                                          UsuarioDesignadoSecundario: vcUsuarioDesignadoSecundario,
+                                          EquipamentoEnvolvidoPrincipal: vcEquipamentoEnvolvidoPrincipal,
+                                          Descricao: vcDescricao,
+                                          MedidaRelacionadaPrincipal: vcMedidaRelacionadaPrincipal
+                                      }
+                                  ),
+                                  Notify(
+                                      "Verifique os campos obrigatórios",
+                                      NotificationType.Warning
+                                  )
+                              )
+                          );
+                          If(
+                              IsBlank(FrmMensagem_14.Error),
+                              UpdateContext(
+                                  {
+                                      vcUsuarioDesignadoPrincipal: "",
+                                      vcUsuarioDesignadoSecundario: "",
+                                      vcEquipamentoEnvolvidoPrincipal: "",
+                                      vcDescricao: "",
+                                      vcMedidaRelacionadaPrincipal: "",
+                                      loading: false
+                                  }
+                              );ResetForm(FrmMensagem_14)
+                          )
+                        PressedBorderColor: =RGBA(58, 188, 182, 1)
+                        PressedColor: =RGBA(58, 188, 182, 1)
+                        PressedFill: =
+                        Size: =20
+                        Text: ="Enviar"
+                        Width: =193
+                        X: =920
+                        Y: =566
+                  - Image44_32:
+                      Control: Image@2.2.3
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =80
+                        Image: =svgMensagem2.Image
+                        X: =18
+                  - Image69_8:
+                      Control: Image@2.2.3
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =80
+                        Image: =svgDetalhesupPopUp.Image
+                        Width: =345
+                        X: =920
+                  - Icon7_5:
+                      Control: Classic/Icon@2.5.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont2
+                        Height: =85
+                        Icon: =Icon.Cancel
+                        OnSelect: |-
+                          =ResetForm(FrmMensagem_14);
+                          UpdateContext(
+                              {
+                                  vcUsuarioDesignadoPrincipal: "",
+                                  vcUsuarioDesignadoSecundario: "",
+                                  vcEquipamentoEnvolvidoPrincipal: "",
+                                  vcDescricao: "",
+                                  vcMedidaRelacionadaPrincipal: "",
+                                  loading: false,
+                                  VarMensagem: false,
+                                  VardFiltervarDestinatário: ""
+                              }
+                          )
+                        Width: =85
+                        X: =1181
+            - LoadingAnimation_13:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Visible: =loading
+                  Width: =200
+                  X: =1165
+                  Y: =568
+                Children:
+                  - Image5_13:
+                      Control: Image@2.2.3
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =200
+                        Image: =WhiteShade1
+                        Width: =200
+                  - Image14_14:
+                      Control: Image@2.2.3
+                      Group: loadinganimation_14
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =50
+                        Image: =gear_1
+                        Width: =50
+                        X: =80
+                        Y: =65
+                  - Image41_15:
+                      Control: Image@2.2.3
+                      Group: loadinganimation_14
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Height: =50
+                        Image: =LoadingIcon
+                        Width: =50
+                        X: =90
+                        Y: =80
+            - PopUpConfig_5:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  Fill: |
+                    =vg_AppTheme.ColorBG
+                  Height: =768
+                  Visible: =vcPopUpConfig
+                  Width: =683
+                  X: =683
+                Children:
+                  - Container4_7:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        Fill: =vg_AppTheme.ColorHeader
+                        Height: =100
+                        Width: =683
+                      Children:
+                        - Icon4_6:
+                            Control: Classic/Icon@2.5.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =vg_AppTheme.ColorFont2
+                              Icon: =Icon.Cancel
+                              OnSelect: |-
+                                =UpdateContext(
+                                    {
+                                        vcPopUpConfig:false
+                                    }
+                                )
+                              X: =619
+                              Y: =20
+                        - Label2_7:
+                            Control: Label@2.5.1
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              Color: =vg_AppTheme.ColorFont2
+                              Font: =Font.'Open Sans'
+                              Size: =25
+                              Text: ="Configurações"
+                              Width: =495
+                              X: =139
+                              Y: =32
+                  - Button1_11:
+                      Control: Classic/Button@2.2.0
+                      Properties:
+                        BorderColor: =ColorFade(Self.Fill, -15%)
+                        Color: |-
+                          =//vg_AppTheme.ColorFont
+                          RGBA(255,255,255,1)
+                        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+                        Fill: =vg_AppTheme.ColorMenu
+                        Font: =Font.'Open Sans'
+                        HoverBorderColor: =ColorFade(Self.BorderColor, 20%)
+                        HoverColor: =RGBA(255, 255, 255, 1)
+                        HoverFill: =ColorFade(vg_AppTheme.ColorMenu, -20%)
+                        OnSelect: |-
+                          =UpdateContext(/*Fecha PopUp, Ativa loading */
+                              {
+                                  vcPopUpConfig: false,
+                                  loading: true
+                              }
+                          );
+                          Patch(/*Muda opção de tema no Sharepoint para que o usuário veja o mesmo tema da próxima vez que abrir o app*/
+                              OpçãoUsuário,
+                              LookUp(
+                                  OpçãoUsuário,
+                                  Título = User().Email
+                              ),
+                              {Tema: drp_TemaInicio_6.Selected.Value}
+                          );
+                          Set(/*Muda variavel marcadora de tema atual*/
+                              vg_ActualTheme,
+                              drp_TemaInicio_6.Selected.Value
+                          );
+                          Switch(
+                              vg_ActualTheme,/*Aplica mudança de tema*/
+                              "Aqua",
+                              Set(
+                                  vg_AppTheme,
+                                  vg_TemaAqua
+                              ),
+                              "Azul",
+                              Set(
+                                  vg_AppTheme,
+                                  vg_TemaAzul
+                              ),
+                              "Verde",
+                              Set(
+                                  vg_AppTheme,
+                                  vg_TemaVerde
+                              ),
+                              "Amarelo",
+                              Set(
+                                  vg_AppTheme,
+                                  vg_TemaAmarelo
+                              ),
+                              "Terracota",
+                              Set(
+                                  vg_AppTheme,
+                                  vg_TemaTerracota
+                              ),
+                              "Escuro",
+                              Set(
+                                  vg_AppTheme,
+                                  vg_TemaEscuro
+                              ),
+                              "Old PC",
+                              Set(
+                                  vg_AppTheme,
+                                  vg_TemaOldPC
+                              ),
+                              "Cítrico",
+                              Set(
+                                  vg_AppTheme,
+                                  vg_TemaCitrico
+                              ),
+                              "Fósforo",
+                              Set(
+                                  vg_AppTheme,
+                                  vg_TemaFosforoVerde
+                              )
+                          );
+                          UpdateContext(/*termina loading*/ 
+                              {
+                                  loading: false,
+                                  vcPopUpConfig: true
+                              }
+                          )
+                        PressedBorderColor: =Self.Fill
+                        PressedColor: =Self.Fill
+                        PressedFill: =Self.Color
+                        Text: ="Aplicar"
+                        Width: =108
+                        X: =538
+                        Y: =161
+                  - Label3_23:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont
+                        Fill: |
+                          =vg_AppTheme.ColorContent
+                        Font: =Font.'Open Sans'
+                        Size: =20
+                        Text: ="Tema:"
+                        Width: =663
+                        X: =10
+                        Y: =110
+                  - drp_TemaInicio_6:
+                      Control: Classic/DropDown@2.3.1
+                      Properties:
+                        BorderColor: =vg_AppTheme.ColorContent
+                        ChevronBackground: =vg_AppTheme.ColorContent
+                        ChevronFill: =vg_AppTheme.ColorFont
+                        ChevronHoverBackground: =ColorFade(vg_AppTheme.ColorMenu, -20%)
+                        ChevronHoverFill: =vg_AppTheme.ColorMenu
+                        Font: =Font.'Open Sans'
+                        HoverFill: =vg_AppTheme.ColorMenu
+                        Items: =["Aqua","Azul","Terracota","Amarelo","Verde","Cítrico","Old PC","Fósforo","Escuro"]
+                        Items.Value: =Value
+                        PressedColor: =RGBA(255, 255, 255, 1)
+                        PressedFill: =vg_AppTheme.ColorMenu
+                        SelectionColor: =RGBA(255, 255, 255, 1)
+                        SelectionFill: =vg_AppTheme.ColorHeader
+                        X: =10
+                        Y: =161
+                  - Rectangle1_19:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: |-
+                          =Switch(drp_TemaInicio_6.Selected.Value,
+                             "Aqua",RGBA(58, 188, 182, 1),
+                             "Azul",RGBA(154, 185, 249, 1),
+                             "Old PC",RGBA(212, 207, 201, 1),
+                             "Terracota",RGBA(236, 140, 8, 1),
+                             "Amarelo",RGBA(253, 199, 49, 1),
+                             "Verde",RGBA(8, 134, 67, 1),
+                             "Cítrico",RGBA(194,210,18, 1),
+                             "Fósforo",RGBA(20,50,20,1),
+                             "Escuro",RGBA(83,83,83, 1)
+                          )
+                        Height: =40
+                        Width: =40
+                        X: =435
+                        Y: =161
+                  - Rectangle1_20:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: |-
+                          =Switch(drp_TemaInicio_6.Selected.Value,
+                             "Aqua",RGBA(21, 135, 128, 1),"Azul",RGBA(107,173,247,1),"Old PC",RGBA(3, 0, 126, 1),
+                             "Terracota",RGBA(178, 105, 21, 1),
+                             "Amarelo",RGBA(190, 150, 32, 1),
+                             "Verde",RGBA(14, 101, 51, 1),
+                             "Cítrico",RGBA(147, 162, 34, 1),
+                             "Fósforo", RGBA(0,255,0,1),
+                             "Escuro",RGBA(68,68,68, 1)
+                          )
+                        Height: =40
+                        Width: =40
+                        X: =475
+                        Y: =161
+                  - Rectangle1_21:
+                      Control: Rectangle@2.3.0
+                      Properties:
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Fill: |-
+                          =Switch(drp_TemaInicio_6.Selected.Value,
+                             "Aqua",RGBA(79,197,191,1),
+                             "Azul",RGBA(191, 219, 255, 1) ,"Old PC",RGBA(239, 238, 234, 1),
+                             "Terracota",RGBA(238,156,71,1),
+                             "Amarelo",RGBA(253, 214, 103, 1),
+                             "Verde",RGBA(39,166,99,1),
+                             "Cítrico",RGBA(211, 229, 17, 1),
+                             "Fósforo",RGBA(0,0,0,1),
+                             "Escuro",RGBA(102,102,102,1)
+                          )
+                        Height: =40
+                        Width: =40
+                        X: =395
+                        Y: =161
+                  - Label3_24:
+                      Control: Label@2.5.1
+                      Properties:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 18, 107, 1)
+                        Color: =vg_AppTheme.ColorFont
+                        Fill: =vg_AppTheme.ColorContent
+                        Font: =Font.'Open Sans'
+                        Size: =20
+                        Text: ="Funções Extras:"
+                        Width: =663
+                        X: =10
+                        Y: =253
+                  - Container26_8:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =40
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =20
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        Width: =663
+                        X: =10
+                        Y: =299
+                      Children:
+                        - Checkbox1_29:
+                            Control: Classic/CheckBox@2.1.0
+                            Properties:
+                              BorderColor: =RGBA(0, 0, 0, 0)
+                              CheckboxBorderColor: =vg_AppTheme.ColorMenu
+                              CheckmarkFill: =RGBA(0, 0, 0, 1)
+                              Color: =vg_AppTheme.ColorFont
+                              Default: =vgBtEquipamento
+                              Font: =Font.'Open Sans'
+                              HoverColor: =RGBA(0, 18, 107, 1)
+                              OnCheck: =Set(vgBtEquipamento,true);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtEquipamento:"true"})
+                              OnUncheck: =Set(vgBtEquipamento,false);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtEquipamento:"false"})
+                              Text: |-
+                                ="🏭Equipamentos"
+                              Width: =187
+                              X: =60
+                              Y: =296
+                        - Checkbox1_30:
+                            Control: Classic/CheckBox@2.1.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              CheckboxBorderColor: =vg_AppTheme.ColorMenu
+                              CheckmarkFill: =RGBA(0, 0, 0, 1)
+                              Color: =vg_AppTheme.ColorFont
+                              Default: =vgBtEquipe
+                              Font: =Font.'Open Sans'
+                              HoverColor: =RGBA(0, 18, 107, 1)
+                              OnCheck: =Set(vgBtEquipe, true);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtEquipe:"true"})
+                              OnUncheck: =Set(vgBtEquipe, false);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtEquipe:"false"})
+                              Text: |-
+                                ="👥Equipe"
+                              Width: =137
+                              X: =232
+                              Y: =296
+                        - Checkbox1_31:
+                            Control: Classic/CheckBox@2.1.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              CheckboxBorderColor: =vg_AppTheme.ColorMenu
+                              CheckmarkFill: =RGBA(0, 0, 0, 1)
+                              Color: =vg_AppTheme.ColorFont
+                              Default: =vgBtPainelPBI
+                              Font: =Font.'Open Sans'
+                              HoverColor: =RGBA(0, 18, 107, 1)
+                              OnCheck: =Set(vgBtPainelPBI,true);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtPainelPBI:"true"})
+                              OnUncheck: =Set(vgBtPainelPBI,false);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtPainelPBI:"false"})
+                              Text: |-
+                                ="📊Painel Gerencial PBI"
+                              Width: =250
+                              X: =373
+                              Y: =296
+                  - Container26_9:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =40
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =30
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        Visible: =PerfilUsuario.Text = "Desenvolvedor"
+                        Width: =663
+                        X: =Container26_8.X
+                        Y: =339
+                      Children:
+                        - Checkbox1_32:
+                            Control: Classic/CheckBox@2.1.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              CheckboxBorderColor: =vg_AppTheme.ColorMenu
+                              CheckmarkFill: =RGBA(0, 0, 0, 1)
+                              Color: =vg_AppTheme.ColorFont
+                              Default: =vgBtVisãoAdimin
+                              Font: =Font.'Open Sans'
+                              HoverColor: =RGBA(0, 18, 107, 1)
+                              OnCheck: =Set(vgBtVisãoAdimin,true);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtVisãoAdimin:"true"})
+                              OnUncheck: =Set(vgBtVisãoAdimin,false);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtVisãoAdimin:"false"})
+                              Text: |-
+                                ="🥷Visão Adimin"
+                              Width: =187
+                              X: =231
+                              Y: =346
+                        - Checkbox1_33:
+                            Control: Classic/CheckBox@2.1.0
+                            Properties:
+                              BorderColor: =RGBA(0, 18, 107, 1)
+                              CheckboxBorderColor: =vg_AppTheme.ColorMenu
+                              CheckmarkFill: =RGBA(0, 0, 0, 1)
+                              Color: =vg_AppTheme.ColorFont
+                              Default: =vgBtVisãoPlanejador
+                              Font: =Font.'Open Sans'
+                              HoverColor: =RGBA(0, 18, 107, 1)
+                              OnCheck: =Set(vgBtVisãoPlanejador,true);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtVisãoPlanejador:"true"})
+                              OnUncheck: =Set(vgBtVisãoPlanejador,false);Patch(OpçãoUsuário,LookUp(OpçãoUsuário,Título = User().Email),{BtVisãoPlanejador:"false"})
+                              Text: |-
+                                ="💻Visão Planejador"
+                              Width: =214
+                              X: =Container26_8.X
+                              Y: =346
