@@ -1,13 +1,5 @@
-# Power Apps source control (commit only .pa.yaml from canvas/Src)
-*.msapp
-*.zip
-*.sarif
-
-# Local extraction output (do not commit)
-/extracted/
-/IF_extracted/
-
-# System/IDE
-.vscode/
-.DS_Store
-Thumbs.db
+## MsApp specific overrides
+/[Cc]ontrols/
+/[Cc]hecksum.json
+/[Hh]eader.json
+/[Aa]pp[Cc]hecker[Rr]esult.sarif

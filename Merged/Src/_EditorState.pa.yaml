@@ -1,0 +1,28 @@
+# ************************************************************************************************
+# Warning: YAML source code for Canvas Apps should only be used to review changes made within Power Apps Studio and for minor edits (Preview).
+# Use the maker portal to create and edit your Power Apps.
+# 
+# The schema file for Canvas Apps is available at https://go.microsoft.com/fwlink/?linkid=2304907
+# 
+# For more information, visit https://go.microsoft.com/fwlink/?linkid=2292623
+# ************************************************************************************************
+EditorState:
+  ScreensOrder:
+    - LoadingScreen
+    - TelaInicial 2.0
+    - Equipamentos 2.0
+    - Passagem de Serviço 2.0
+    - FluxoAtividades 2.0
+    - FluxodeEND's2.0
+    - FluxodeEquipe2.0
+    - FluxodeInspeção2.0
+    - FluxodeManutenção2.0
+    - VisãoAdmin
+    - VisãoPlanejador2.0
+    - PlanosVisãoGeral
+    - PlanosHistórico
+    - PlanosAvaliaçãoVR
+    - LabFluxoSolicitações
+    - LabPlanner
+    - Repositório
+    - ElementosGraficos
